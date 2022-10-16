@@ -1,0 +1,46 @@
+body {
+	width: 100%;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.8) 50%),
+		url(/Images/1.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+.logo {
+	color: #ff7200;
+	font-size: 35px;
+	margin-top: 15%;
+}
+
+ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-family: Arial;
+	font-weight: bold;
+	transition: 0.4s ease-in-out;
+}
+
+ul li a:hover {
+	color: #ff7200;
+}
+
+p {
+	color: white;
+	font-size: 25px;
+}
+
+.btn {
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
+	border: 1px solid red;
+	border-radius: 20px;
+}
+
+.btn:hover {
+	background-color: beige;
+	color: black;
+}
