@@ -1,0 +1,28 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "project work",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kadgtgt/Ufarn-project.git"
+  },
+  "keywords": [
+    "ufarm"
+  ],
+  "author": "kintu riley davis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kadgtgt/Ufarn-project/issues"
+  },
+  "homepage": "https://github.com/Kadgtgt/Ufarn-project#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "pug": "^3.0.2"
+  }
+}
