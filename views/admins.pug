@@ -1,0 +1,48 @@
+doctype html
+head
+  title Ufarm|AdminRegistration
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS v5.2.0-beta1
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous')
+  link(rel='icon' href='/Images/fav.jpg')
+  link(rel='stylesheet' href='/css/admins.css')
+  link(href='https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap' rel='stylesheet')
+header
+  // place navbar here
+  nav.navbar.navbar-expand-lg.bg-light
+    .container-fluid
+      img.image(src='/Images/fav.jpg')
+      a.navbar-brand(href='#') Masajja Urban Farm
+      ul
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle.btn(href='#' role='button' style='margin-right: 50px; list-style: none;' data-bs-toggle='dropdown' aria-expanded='false')
+            | Admins Registration
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='/html/aoreg.html') Agricultural Officer Registration
+            li
+              a.dropdown-item(href='/html/fOreg.html') Farmer One Registration
+            li
+              a.dropdown-item(href='/html/urbanfreg.html') Urban Farmer Registration
+main
+  .container
+    .row
+      .col.content
+        h1 Welcome to the Masajja Urban Initiative Admins Page.
+        br
+        h2 Greetings and Welcome notice.
+        p
+          | For our new Admin members, you are welcome to the most outstanding
+          | project of Masajja.
+        p Feel at home and be committed to your work.
+        p
+          | Register in your credentials in order to access your different fields.
+footer#sticky-footer.flex-shrink-0.py-4.bg-dark.text-white-50
+  .container.text-center
+    small Copyright &copy; Masajja Urban Farm
+// Bootstrap JavaScript Libraries
+script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js' integrity='sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js' integrity='sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK' crossorigin='anonymous')
+script(src='/public/js/ao.js')

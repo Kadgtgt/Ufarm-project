@@ -15,7 +15,7 @@ main
     h1 Agricultural Officer SignUp
     .row.justify-content-center.align-items-center.g-2
       .col-lg-6.bg-dark.text-white.my-5
-        form(action='' name='registration')
+        form(action='/' method='post' name='registration')
           .row.justify-content-center.align-items-center.g-2
             .col-lg-6
               label(for='fName') First Name
@@ -62,7 +62,7 @@ main
                 input#gender2(type='radio' name='gender' autocomplete='off' value='female')
                 span Female
           .col-lg-6
-            a.btn(href='' style='border: 2px solid black' type='submit' value='submit') Sign up
+            button.btn.btn-primary(type='submit') Sign up
 footer
   // place footer here
 // Bootstrap JavaScript Libraries
