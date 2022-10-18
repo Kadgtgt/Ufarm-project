@@ -32,6 +32,7 @@ app.set("views", "views");
 // MIDDLEWARE
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 // ROUTES
 app.use("/", aOregRoutes);

@@ -12,10 +12,13 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
 	console.log(req.body);
 	const davis = new Officer({
-		fname: req.body.fName,
-		lname: req.body.lName,
+		fName: req.body.fName,
+		lName: req.body.lName,
 		uniqueNo: req.body.uniqueNo,
 		tel: req.body.tel,
+		role: req.body.role,
+		dor: req.body.dor,
+		gender: req.body.gender,
 		email: req.body.email,
 		password: req.body.password,
 	});

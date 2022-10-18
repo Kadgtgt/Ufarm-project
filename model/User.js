@@ -14,13 +14,25 @@ const officerSchema = new mongoose.Schema({
 		type: String,
 	},
 
-	uniqueNumber: {
+	role: {
 		type: String,
 	},
 
-    password:{
-        type:String
-    }
+	uniqueNo: {
+		type: String,
+	},
+
+	password: {
+		type: String,
+	},
+
+	dor: {
+		type: String,
+	},
+
+	gender: {
+		type: String,
+	},
 });
 officerSchema.plugin(passportLocalMongoose, {
 	usernameField: "password",

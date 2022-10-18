@@ -15,7 +15,7 @@ main
     h1 Farmer One SignUp
     .row.justify-content-center.align-items-center.g-2
       .col-lg-6.bg-dark.text-white.my-5
-        form(action='')
+        form(action='/foreg' method='post' name='registration')
           .row.justify-content-center.align-items-center.g-2
             .col-lg-6
               label(for='fName') First Name
@@ -36,9 +36,7 @@ main
               label(for='roles') Roles
               select#select.input(name='dropdown')
                 option(value='0')
-                option(value='1') Agric Officer
                 option(value='1') Farmer One
-                option(value='1') Urban Farmer
             .col-lg-6
               label(for='ward') Ward
               select#select.input(name='dropdown')
