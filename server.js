@@ -1,25 +1,27 @@
 //DEPENDENCIES
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
 const config = require("./config/db");
 const passport = require("passport");
 const path = require("path");
 
 // defining expressSession
-const expressSession = require('express-session')({
-    secret: 'secret',
-    resave: false,
-    saveUninitialized: false,  
+const expressSession = require("express-session")({
+	secret: "secret",
+	resave: false,
+	saveUninitialized: false,
 });
 
 // importing user model
-const Officer = require("./model/User");
+const Registration = require("./model/User");
 
 // importing route files
 const aOregRoutes = require("./routes/aOregRoutes");
 const registrationRoutes = require("./routes/registrationRoutes");
+const authRoutes = require("./routes/authRoutes");
+
 // INSTANTIATIONS
+const app = express();
 
 //setup database connections
 mongoose.connect(config.database, { useNewUrlParser: true });
@@ -38,26 +40,26 @@ db.on("error", function (err) {
 // CONFIGURATIONS
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
-app.set("views", "views");
 
 // MIDDLEWARE
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use(expressSession);
 
-// passport configuration middleware 
+
+// passport configuration middleware
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(Officer.createStrategy());
-passport.serializeUser(Officer.serializeUser());
-passport.deserializeUser(Officer.deserializeUser);
-
+passport.use(Registration.createStrategy());
+passport.serializeUser(Registration.serializeUser());
+passport.deserializeUser(Registration.deserializeUser);
 
 // ROUTES
 app.use("/", aOregRoutes);
 app.use("/", registrationRoutes);
+app.use("/", authRoutes);
 
 //Always the second last line in the Express server
 app.get("*", (req, res) => {

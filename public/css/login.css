@@ -1,3 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.title {
+	font-family: "Fredoka One", cursive;
+	transform: translateX(-90px);
+	font-size: 30px;
+}
+
+.image {
+	width: 3pc;
+}
+
+.my-list ul li {
+	display: inline-block;
+	margin-left: 50px;
+	list-style: none;
+	/* transform: translateY(1px); */
+	margin-top: 12px;
+	font-family: "Fredoka One", cursive;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.btn {
+	border: 2px solid black;
+	transition: 0.2s ease-in-out;
+	position: relative;
+	overflow: hidden;
+}
+
+.btn:hover {
+	border: 1px solid #fff;
+	box-shadow: #222 1px 0 5px;
+	transform: translateY(-5px);
+}
 body {
 	margin: 0;
 	padding: 0;

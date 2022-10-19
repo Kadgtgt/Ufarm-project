@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Importing Model
 const Registration = require('../model/User');
-const Officer = require('../model/User')
+// const Officer = require('../model/User')
 
 // router.get('/folist', (req, res) => {
 //     res.render('signup');
@@ -36,7 +36,7 @@ const Officer = require('../model/User')
 
 router.get("/folist", async (req, res) => {
     try {
-        let items = await Officer.find({ role: "Agric Officer" });
+        let items = await Registration.find({ role: "Agric Officer" });
         res.render("folist", {farmerones:items});
     } catch (error) {
         res.status(400).send("Unable to find Farmer Ones in the Database");
@@ -44,6 +44,8 @@ router.get("/folist", async (req, res) => {
     }
 	
 });
+
+
 
 // always the last line in the routes files.
 module.exports = router;
