@@ -6,8 +6,19 @@ const config = require("./config/db");
 const passport = require("passport");
 const path = require("path");
 
+// defining expressSession
+const expressSession = require('express-session')({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: false,  
+});
+
+// importing user model
+const Officer = require("./model/User");
+
 // importing route files
 const aOregRoutes = require("./routes/aOregRoutes");
+const registrationRoutes = require("./routes/registrationRoutes");
 // INSTANTIATIONS
 
 //setup database connections
@@ -31,11 +42,22 @@ app.set("views", "views");
 
 // MIDDLEWARE
 const bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/public/css", express.static(__dirname + "/public/css"));
+app.use(expressSession);
+
+// passport configuration middleware 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(Officer.createStrategy());
+passport.serializeUser(Officer.serializeUser());
+passport.deserializeUser(Officer.deserializeUser);
+
 
 // ROUTES
 app.use("/", aOregRoutes);
+app.use("/", registrationRoutes);
 
 //Always the second last line in the Express server
 app.get("*", (req, res) => {

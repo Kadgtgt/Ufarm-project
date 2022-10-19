@@ -11,22 +11,20 @@ block content
     table.table.table-bordered 
         thead
             tr
-                th Full Name 
-                th NIN NUmber
-                th Ward
+                th First Name
+                th Last Name
+                th UniqueNO
                 th Phone Number
-                th Resident Address 
                 th Update
                 th Delete
         tbody
             if farmerones.length
                 each farmerone in farmerones
                     tr
-                        td #{farmerone.surname}
-                        td #{farmerone.ninnumber}
-                        td #{farmerone.ward}
-                        td #{farmerone.phonenumber}
-                        td #{farmerone.raddress}
+                        td #{farmerone.fName}
+                        td #{farmerone.lName}
+                        td #{farmerone.uniqueNo}
+                        td #{farmerone.tel}
                         //- td #{moment(us
                         td
                             a
