@@ -1,0 +1,64 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	background-color: skyblue;
+	line-height: 70px;
+	padding-left: 30px;
+	font-weight: bolder;
+}
+
+a {
+	text-decoration: none;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+}
+
+.logout {
+	float: right;
+	padding-right: 30px;
+}
+
+ul {
+	background-color: #424a5b;
+	width: 14%;
+	height: 100%;
+	position: absolute;
+	padding-top: 4%;
+	text-align: center;
+}
+
+ul li {
+	list-style: none;
+	padding-bottom: 30px;
+	font-size: 9px;
+}
+
+ul li a {
+	color: white;
+	font-weight: bold;
+	margin-right: 70px;
+}
+
+ul li a:hover {
+	color: skyblue;
+	text-decoration: none;
+}
+
+.card {
+	margin-top: 20px;
+	margin-left: 25%;
+	width: 100%;
+}
+
+.card2 {
+	margin-top: 10px;
+	margin-left: 30%;
+	border: 2px solid red;
+	border-radius: 5px;
+}

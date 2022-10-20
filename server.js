@@ -19,6 +19,7 @@ const Registration = require("./model/User");
 const aOregRoutes = require("./routes/aOregRoutes");
 const registrationRoutes = require("./routes/registrationRoutes");
 const authRoutes = require("./routes/authRoutes");
+const dashboardsRoutes = require("./routes/dashboardsRoutes")
 
 // INSTANTIATIONS
 const app = express();
@@ -60,6 +61,7 @@ passport.deserializeUser(Registration.deserializeUser);
 app.use("/", aOregRoutes);
 app.use("/", registrationRoutes);
 app.use("/", authRoutes);
+app.use("/", dashboardsRoutes)
 
 //Always the second last line in the Express server
 app.get("*", (req, res) => {

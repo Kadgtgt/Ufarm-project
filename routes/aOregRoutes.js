@@ -12,7 +12,7 @@ router.get("/ao", (req, res) => {
 router.post('/ao', async(req, res) => {
     const signup = new Registration(req.body);
     console.log(req.body)
-    await Registration.register(signup, req.body.password, (err) => {
+    await Re.register(signup, req.body.password, (err) => {
         if (err) {
             res.status(400).render('aOreg')
             console.log(err)
