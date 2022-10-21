@@ -7,8 +7,10 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
-	console.log(req.body);
-	res.redirect("/folist");
+	req.session.user = req.user;
+	console.log(req.user);
+	// res.redirect("/folist");
+	res.send("you have logged in");
 });
 
 router.post("/logout", (req, res) => {
@@ -22,5 +24,11 @@ router.post("/logout", (req, res) => {
 		});
 	}
 });
+
+// router.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
+// 	req.session.user = req.user;
+// 	console.log("/folist",   req.session.user);
+// 	res.redirect("/uploadproduce");
+// 	});
 
 module.exports = router;

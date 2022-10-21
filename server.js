@@ -17,9 +17,11 @@ const Registration = require("./model/User");
 
 // importing route files
 const aOregRoutes = require("./routes/aOregRoutes");
+const fOregRoutes = require("./routes/fOregRoutes");
+const uFregRoutes = require("./routes/uFregRoutes");
 const registrationRoutes = require("./routes/registrationRoutes");
 const authRoutes = require("./routes/authRoutes");
-const dashboardsRoutes = require("./routes/dashboardsRoutes")
+const dashboardsRoutes = require("./routes/dashboardsRoutes");
 
 // INSTANTIATIONS
 const app = express();
@@ -49,7 +51,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use(expressSession);
 
-
 // passport configuration middleware
 app.use(passport.initialize());
 app.use(passport.session());
@@ -59,9 +60,11 @@ passport.deserializeUser(Registration.deserializeUser);
 
 // ROUTES
 app.use("/", aOregRoutes);
+app.use("/", fOregRoutes);
+app.use("/", uFregRoutes);
 app.use("/", registrationRoutes);
 app.use("/", authRoutes);
-app.use("/", dashboardsRoutes)
+app.use("/", dashboardsRoutes);
 
 //Always the second last line in the Express server
 app.get("*", (req, res) => {
@@ -69,4 +72,4 @@ app.get("*", (req, res) => {
 });
 
 // BOOTSTRAPPING SERVER ALWAYS THE LAST LINE IN THE EXPRESS SERVER
-app.listen(5000, () => console.log("listening on port 5000!"));
+app.listen(4000, () => console.log("listening on port 4000!"));

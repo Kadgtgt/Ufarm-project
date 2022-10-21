@@ -3,7 +3,6 @@ const router = express.Router();
 
 // Importing Model
 const Registration = require('../model/User');
-// const Officer = require('../model/User')
 
 // router.get('/folist', (req, res) => {
 //     res.render('signup');

@@ -7,15 +7,15 @@ head
   // Bootstrap CSS v5.2.1
   link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
   link(rel='icon' href='/Images/fav.jpg')
-  link(rel='stylesheet' href='/css/forms.css')
+  link(rel='stylesheet' href='/public/css/forms.css')
 header
   // place navbar here
 main
   .container
-    h1 Farmer One SignUp
+    h1 Urban Farmer Signup
     .row.justify-content-center.align-items-center.g-2
       .col-lg-6.bg-dark.text-white.my-5
-        form(action='/fo' method='post' name='registration')
+        form(action='/uf' method='post' name='registration')
           .row.justify-content-center.align-items-center.g-2
             .col-lg-6
               label(for='fName') First Name
@@ -24,8 +24,8 @@ main
               label(for='lName') Last Name
               input#lName.input(type='text' name='lName' autofocus='')
             .col-lg-6
-              label(for='uniqueNO') Unique ID
-              input#uniqueNo.input(type="text" name='uniqueNo' autofocus='')
+              label(for='uniqueNo') Unique Number
+              input#uniqueNo.input(type='text' name='uniqueNo' autofocus='')
             .col-lg-6
               label(for='tel') Phone Number
               input#tel.input(type='text' name='tel' autofocus='')
@@ -35,8 +35,8 @@ main
             .col-lg-6
               label(for='role') Roles
               select#select.input(name='role')
-                option(value='0')
-                option(value='Farmer One') Farmer One
+                option(value='0') Select Role
+                option(value='Urban Farmer') Urban Farmer
             .col-lg-6
               label(for='ward') Ward
               select#select.input(name='dropdown')
@@ -45,6 +45,13 @@ main
                 option(value='W02') W02
                 option(value='W03') W03
                 option(value='W04') W04
+            .col-lg-6
+              label(for='activites') Activities
+              select#select.input(name='activities')
+                option(value='0')
+                option(value='Horticulture') Horticulture
+                option(value='Poultry') Poultry
+                option(value='Dairy products') Dairy products
             .col-lg-6
               label(for='date_regex') Date of Registration:
               input#regex_date.input(type='date' name='date_regex')
@@ -60,9 +67,10 @@ main
                 span Female
           br
           .col-lg-6
-            button.btn.btn-primary(type='submit') Sign up
-footer
-  // place footer here
+            button.btn.btn-primary(type='submit') Signup
+footer#sticky-footer.flex-shrink-0.py-4.bg-dark.text-white-50
+  .container.text-center
+    small Copyright &copy; Masajja Urban Farm
 // Bootstrap JavaScript Libraries
 script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js' integrity='sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3' crossorigin='anonymous')
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js' integrity='sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz' crossorigin='anonymous')

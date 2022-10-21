@@ -1,15 +1,17 @@
 const express = require("express");
-const model = require("mongoose");
 const router = express.Router();
 
+// AO dashboard
 router.get("/aoDashboard", (req, res) => {
 	res.render("aoDashboard");
 });
 
+// FO dashboard
 router.get("/foDashboard", (req, res) => {
 	res.render("foDashboard");
 });
 
+// UF dashboard
 router.get("/ufDashboard", (req, res) => {
 	res.render("ufDashboard");
 });

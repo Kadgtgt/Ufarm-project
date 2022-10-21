@@ -30,6 +30,10 @@ const registrationSchema = new mongoose.Schema({
 		type: String,
 	},
 
+	activities:{
+		type: String,
+	},
+
 	gender: {
 		type: String,
 	},
