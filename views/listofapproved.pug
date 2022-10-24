@@ -18,12 +18,12 @@ block content
                 th Mode of Payment
                 th Image 
                 th Update
-                th Change Status
+                th Change Availability
                 th Delete
         tbody
             if products.length
-                each product in products
-                    if product.status == "pending"
+                each item in products
+                    if product.status == "approved"
                         tr
                             td #{product.producename}
                             td #{product.quantity}
@@ -34,9 +34,7 @@ block content
                                 img(src="/"+product.uploadimage, alt="Image" width='150px' height="150px")
                             //- td #{moment(us
                             td
-                                a.btn.btn-primary.btn-block(href='/produce/update/'+product._id) Update
-                            td
-                               a.btn.btn-secondary.btn-block(href='/produce/approve/'+product._id) approve
+                               a.btn.btn-secondary.btn-block(href='/produce/available/'+item._id) Availability
                             td
                                 form(method="post" action='/produce/delete')
                                     input(type="hidden" placeholder="" name="id", value=product._id)

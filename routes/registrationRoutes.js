@@ -35,7 +35,8 @@ const Registration = require('../model/User');
 
 router.get("/folist", async (req, res) => {
     try {
-        let items = await Registration.find({ role: "Agric Officer" });
+        let items = await Registration.find({ role: "Farmer One" });
+        console.log(items); 
         res.render("folist", {farmerones:items});
     } catch (error) {
         res.status(400).send("Unable to find Farmer Ones in the Database");

@@ -22,6 +22,7 @@ const uFregRoutes = require("./routes/uFregRoutes");
 const registrationRoutes = require("./routes/registrationRoutes");
 const authRoutes = require("./routes/authRoutes");
 const dashboardsRoutes = require("./routes/dashboardsRoutes");
+const urbanFarmerRoutes = require("./routes/urbanFarmerRoutes ");
 
 // INSTANTIATIONS
 const app = express();
@@ -56,7 +57,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 passport.use(Registration.createStrategy());
 passport.serializeUser(Registration.serializeUser());
-passport.deserializeUser(Registration.deserializeUser);
+// passport.deserializeUser(Registration.deserializeUser);
 
 // ROUTES
 app.use("/", aOregRoutes);
@@ -65,6 +66,7 @@ app.use("/", uFregRoutes);
 app.use("/", registrationRoutes);
 app.use("/", authRoutes);
 app.use("/", dashboardsRoutes);
+app.use("/", urbanFarmerRoutes);
 
 //Always the second last line in the Express server
 app.get("*", (req, res) => {

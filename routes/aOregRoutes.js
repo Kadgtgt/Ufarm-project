@@ -17,7 +17,7 @@ router.post('/ao', async(req, res) => {
             res.status(400).render('aOreg')
             console.log(err)
         } else {
-            res.redirect('/folist')
+            res.redirect('/folist ')
         }
     })
 

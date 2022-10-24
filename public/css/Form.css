@@ -1,16 +1,14 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing:border-box;
+    /* box-sizing:border-box; */
 }
 body{
   overflow-y:hidden;
     background: rgb(24, 32, 45); 
 }
 
-main{
-    
-}
+
 .container{
     width: 100%;
     color: rgb(236, 242, 247,0.67);
@@ -66,7 +64,7 @@ h1{
 
 }
 
-.btnz button{
+button{
     width: 12%;
     padding: 8px;
     background: rgb(11, 11, 11,0.4);
@@ -78,23 +76,13 @@ h1{
     position: relative;
     color: rgb(166, 170, 174);
     cursor: pointer;
+    margin-top: 10px;
 }
 
-span{
-    background: #04a897;
-    width: 0;
-    height: 100%;
-    position:absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.6s;
-}
-
-.btnz button:hover span{
+button:hover span{
 width: 100%;
 }
-.btnz button:hover{
+button:hover{
     border: none;
     color: black;
 }

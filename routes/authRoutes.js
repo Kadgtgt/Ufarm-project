@@ -9,8 +9,8 @@ router.get("/login", (req, res) => {
 router.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
 	req.session.user = req.user;
 	console.log(req.user);
-	// res.redirect("/folist");
-	res.send("you have logged in");
+	res.redirect("/ufDashboard");
+	// res.send("you have logged in");
 });
 
 router.post("/logout", (req, res) => {

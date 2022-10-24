@@ -1,0 +1,85 @@
+doctype html
+head
+  title Title
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS v5.2.1
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/Form.css')
+header
+  // place navbar here
+main
+  .container(style='transform:translateY(50px);')
+    h2 Urban Farmer Produce Upload
+    hr
+    .row.justify-content-center.align-items-center.my-5.cage
+      .col-lg-2.cage
+        form(action='/uploadproduce' name='register' enctype="multipart/form-data" method="POST")
+          .row.justify-content-center.align-items-center.g-2.lamar
+            .col-lg-3.form-zones
+              label First name:
+              input.form-inputs(name='userName' type='text')
+            .col-lg-3.form-zones
+              label Product name:
+              input.form-inputs(name='prodName' type='text')
+            .col-lg-3.form-zones
+              label Date of upload:
+              input.form-inputs(name='regDate' type='date')
+            .col-lg-3.form-zones
+              label Supplier ID (@email):
+              input.form-inputs(name='supplierId' type='email')
+            .col-lg-3.form-zones
+              label Upload image:
+              input.form-inputs(name='prodImage' type='file' style='padding:0;')
+            .col-lg-3.form-zones
+              label Product Category:
+              select#select.form-select(name='prodCategory')
+                option(value='' style='text-align:center;') Select option
+                option(value='Horticulture') Horticulture
+                option(value='Poultry') Poultry
+                option(value='Diary') Diary
+            .col-lg-3.form-zones
+              label Unique No:
+              input.form-inputs(name='uniqueNo' type='text')
+            .col-lg-3.form-zones
+              label Ward:
+              select#select.form-select(name='wardName')
+                option(value='' style='text-align:center;') Select option
+                option(value='W01') W01
+                option(value='W02') W02
+                option(value='W03') Ward 3
+                option(value='W04') Ward 3
+            .col-lg-12.form-radio
+              label Product type:
+              .radio
+                | Organic
+                input(type='radio' name='prodType' checked='')
+                |             Non-Organic
+                input(type='radio' name='prodType')
+            .col-lg-3.form-zones
+              label Quantity:
+              input.form-inputs(name='prodQuantity' type='text' style='padding:0;')
+            .col-lg-3.form-zones
+              label Mode of payment:
+              select#select.form-select(name='paymentMode')
+                option(value='' style='text-align:center;') Select option
+                option(value='Mobile money') Mobile money
+                option(value='Pay with cash') Pay with cash
+            .col-sm-12.col-lg-2.form-zones
+              label Price:
+              input.form-inputs(type='text' name='price' placeholder='Ugx:')
+            .col-lg-3.form-zones
+              label Mode of Delivery:
+              select#select.form-select(name='deliveryMode')
+                option(value='' style='text-align:center;') Select option
+                option(value='Pick up') Pick up
+                option(value='Home delivery') Home delivery
+            .col-lg-3.form-zones
+              label Direction:
+              textarea#direction.form-inputs(name='direction' cols='30' rows='10')
+            hr.boundary
+            .col-lg-6
+              button.btn.btn-primary(type='submit') Sign up
+footer
+  // place footer here

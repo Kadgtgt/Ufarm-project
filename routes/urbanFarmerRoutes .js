@@ -4,8 +4,7 @@ const multer = require("multer");
 const connectEnsureLogin = require("connect-ensure-login");
 
 // Importing Model
-const Produce = require("../models/ProduceUpload");
-const Registration = require("../models/User");
+const UFProdUploads = require("../model/UrbanFarmerUpload");
 
 // image upload
 var storage = multer.diskStorage({
@@ -21,9 +20,9 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 router.get("/uploadproduce", async (req, res) => {
-	const urbanFarmerList = await Registration.find({ role: "urbanfarmer" });
+	const urbanFarmerList = await UFProdUploads.find({ role: "urbanfarmer" });
 	console.log(urbanFarmerList);
-	res.render("produce", { urbanfarmers: urbanFarmerList });
+	res.render("produceUpload", { urbanfarmers: urbanFarmerList });
 });
 
 // router.get("/uploadproduce", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
@@ -34,7 +33,7 @@ router.get("/uploadproduce", async (req, res) => {
 router.post("/uploadproduce", upload.single("uploadimage"), async (req, res) => {
 	console.log(req.body);
 	try {
-		const produce = new Produce(req.body);
+		const produce = new UFProdUploads(req.body);
 		produce.uploadimage = req.file.path;
 		console.log("This is my produce", produce);
 		await produce.save();
@@ -53,6 +52,7 @@ router.get("/producelist", async (req, res) => {
 		res.status(400).send("Unable to get Produce list");
 	}
 });
+
 // Updating Produce
 router.get("/produce/update/:id", async (req, res) => {
 	try {
@@ -75,5 +75,45 @@ router.post("/produce/update", async (req, res) => {
 // router.get("/UFdashboard", (req, res) => {
 // 	res.render("dashboards/UF-dashboard");
 // });
+
+// approve
+router.get("/produce/approve/:id", async (req, res) => {
+	try {
+		const updateProduct = await Produce.findOne({ _id: req.params.id });
+		res.render("approve", { product: updateProduct });
+		console.log("Produce approved", updateProduct);
+	} catch (error) {
+		res.status(400).send("Unable to approve produce");
+	}
+});
+
+router.post("/produce/approve", async (req, res) => {
+	try {
+		await Produce.findOneAndUpdate({ _id: req.query.id }, req.body);
+		res.redirect("/producelist");
+	} catch (error) {
+		res.status(400).send("Unable to update produce");
+	}
+});
+
+// available produce get and post
+router.get("/produce/available/:id", async (req, res) => {
+	try {
+		const saleProduct = await UFProdUploads.findOne({ _id: req.params.id });
+		res.render("availability", { item: updateProduct });
+		console.log("Product approved", saleProduct);
+	} catch (error) {
+		res.status(400).send("Unable to approve produce");
+	}
+});
+
+router.post("/produce/available", async (req, res) => {
+	try {
+		await Produce.findOneAndUpdate({ _id: req.query.id }, req.body);
+		res.redirect("/producelist");
+	} catch (error) {
+		res.status(400).send("Unable to update produce");
+	}
+});
 
 module.exports = router;

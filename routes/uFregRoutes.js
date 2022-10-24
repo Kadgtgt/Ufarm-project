@@ -4,7 +4,7 @@ const router = express.Router();
 // importing model
 const Registration = require("../model/User");
 
-router.get("/uf", (req, res) => {
+router.get("/ufg", (req, res) => {
 	res.render("uFreg");
 });
 
