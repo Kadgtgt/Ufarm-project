@@ -21,21 +21,5 @@ router.post("/uf", async (req, res) => {
 	});
 });
 
-// router.post("/ao", (req, res) => {
-// 	console.log(req.body);
-// 	const davis = new Registration({
-// 		fName: req.body.fName,
-// 		lName: req.body.lName,
-// 		uniqueNo: req.body.uniqueNo,
-// 		tel: req.body.tel,
-// 		role: req.body.role,
-// 		dor: req.body.dor,
-// 		gender: req.body.gender,
-// 		email: req.body.email,
-// 		password: req.body.password,
-// 	});
-// 	davis.save();
-// 	res.send("user registered");
-// });
 
 module.exports = router;

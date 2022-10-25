@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
 const userSchema = new mongoose.Schema({
-	userName: {
+	supplierName: {
 		type: String,
 		require: true,
 	},
@@ -24,17 +24,13 @@ const userSchema = new mongoose.Schema({
 	},
 	prodCategory: {
 		type: String,
-		require: true,
 	},
 	prodName: {
 		type: String,
 		require: true,
-		trim: true,
 	},
 	prodImage: {
 		type: String,
-		require: true,
-		trim: true,
 	},
 	wardName: {
 		type: String,
@@ -47,7 +43,7 @@ const userSchema = new mongoose.Schema({
 		trim: true,
 	},
 	prodQuantity: {
-		type: String,
+		type: Number,
 		require: true,
 		trim: true,
 	},
@@ -67,7 +63,7 @@ const userSchema = new mongoose.Schema({
 		trim: true,
 	},
 	price: {
-		type: String,
+		type: Number,
 		require: true,
 		trim: true,
 	},

@@ -37,6 +37,10 @@ const registrationSchema = new mongoose.Schema({
 	gender: {
 		type: String,
 	},
+
+	ward:{
+		type: String,
+	},
 });
 registrationSchema.plugin(passportLocalMongoose, {
 	usernameField: "uniqueNo"

@@ -26,8 +26,8 @@ a:hover {
 
 ul {
 	background-color: #424a5b;
-	width: 14%;
-	height: 100%;
+	/* width: 14%; */
+	height: 88%;
 	position: absolute;
 	padding-top: 4%;
 	text-align: center;
@@ -42,7 +42,7 @@ ul li {
 ul li a {
 	color: white;
 	font-weight: bold;
-	margin-right: 70px;
+	margin-right: 50px;
 }
 
 ul li a:hover {
@@ -52,13 +52,7 @@ ul li a:hover {
 
 .card {
 	margin-top: 20px;
-	margin-left: 25%;
-	width: 100%;
-}
-
-.card2 {
-	margin-top: 10px;
 	margin-left: 30%;
-	border: 2px solid red;
-	border-radius: 5px;
+	width: 50%;
+	height: 130px;
 }

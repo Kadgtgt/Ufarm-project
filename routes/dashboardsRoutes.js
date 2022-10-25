@@ -13,14 +13,19 @@ router.get("/foDashboard", (req, res) => {
 });
 
 // UF dashboard ROUTE
-router.get("/ufDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
-	req.session.user = req.user; 
-	if (req.user.role == 'Urban Farmer') {
-		res.render("ufDashboard");
-	}else {
-		res.send('this page is only accessed by  Urban Farmer');
-	}
+router.get("/ufDashboard", (req, res) => {
+	res.render("ufDashboard");
 });
+
+// // UF dashboard ROUTE
+// router.get("/ufDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
+// 	req.session.user = req.user;
+// 	if (req.user.role == 'Urban Farmer') {
+// 		res.render("ufDashboard");
+// 	}else {
+// 		res.send('this page is only accessed by  Urban Farmer');
+// 	}
+// });
 
 router.post("/aoDashboard", (req, res) => {
 	res.redirect();
@@ -33,6 +38,5 @@ router.post("/foDashboard", (req, res) => {
 router.post("/ufDashboard", (req, res) => {
 	res.redirect();
 });
-
 
 module.exports = router;

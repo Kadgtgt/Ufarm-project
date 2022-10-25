@@ -19,10 +19,14 @@ var storage = multer.diskStorage({
 // instantiate variable upload to store multer functionality to upload image
 var upload = multer({ storage: storage });
 
+router.get("/produceupload", (req,res)=>{
+	res.render("produceUpload");
+});
+
 router.get("/uploadproduce", async (req, res) => {
 	const urbanFarmerList = await UFProdUploads.find({ role: "urbanfarmer" });
 	console.log(urbanFarmerList);
-	res.render("produceUpload", { urbanfarmers: urbanFarmerList });
+	res.render("producelist", { products: urbanFarmerList });
 });
 
 // router.get("/uploadproduce", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
@@ -30,11 +34,11 @@ router.get("/uploadproduce", async (req, res) => {
 // 	res.render("produce", { currentUser: req.session });
 // });
 
-router.post("/uploadproduce", upload.single("uploadimage"), async (req, res) => {
+router.post("/uploadproduce", upload.single("prodImage"), async (req, res) => {
 	console.log(req.body);
 	try {
 		const produce = new UFProdUploads(req.body);
-		produce.uploadimage = req.file.path;
+		produce.prodImage = req.file.path;
 		console.log("This is my produce", produce);
 		await produce.save();
 		res.redirect("/uploadproduce");
@@ -47,7 +51,7 @@ router.post("/uploadproduce", upload.single("uploadimage"), async (req, res) => 
 router.get("/producelist", async (req, res) => {
 	try {
 		let products = await Produce.find();
-		res.render("produce-list", { products: products });
+		res.render("producelist", { products: products });
 	} catch (error) {
 		res.status(400).send("Unable to get Produce list");
 	}
@@ -57,7 +61,7 @@ router.get("/producelist", async (req, res) => {
 router.get("/produce/update/:id", async (req, res) => {
 	try {
 		const updateProduct = await Produce.findOne({ _id: req.params.id });
-		res.render("produce-update", { product: updateProduct });
+		res.render("produceupdate", { product: updateProduct });
 	} catch (error) {
 		res.status(400).send("Unable to update produce");
 	}
