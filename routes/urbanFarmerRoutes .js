@@ -24,7 +24,7 @@ router.get("/produceupload", (req,res)=>{
 });
 
 router.get("/uploadedproduce", async (req, res) => {
-	const urbanFarmerList = await UFProdUploads.find({ role: "urbanfarmer" });
+	const urbanFarmerList = await UFProdUploads.find({ role: "Urban Farmer" });
 	console.log(urbanFarmerList);
 	res.render("producelist", { products: urbanFarmerList });
 });
@@ -87,16 +87,16 @@ router.get("/produce/approve/:id", async (req, res) => {
 		res.render("approve", { product: updateProduct });
 		console.log("Produce approved", updateProduct);
 	} catch (error) {
-		res.status(400).send("Unable to approve produce");
+		res.status(400).send("Unable to get produce");
 	}
 });
 
 router.post("/produce/approve", async (req, res) => {
 	try {
 		await Produce.findOneAndUpdate({ _id: req.query.id }, req.body);
-		res.redirect("producelist");
+		res.redirect("/producelist");
 	} catch (error) {
-		res.status(400).send("Unable to update produce");
+		res.status(400).send("Unable to approve produce");
 	}
 });
 

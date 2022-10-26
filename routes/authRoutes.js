@@ -9,22 +9,15 @@ router.get("/login", (req, res) => {
 router.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
 	req.session.user = req.user;
 	console.log("This is the current user", req.session.user);
-	try {
-		// res.redirect("/ufDashboard");
-		// res.send("you have logged in");
-		// if (req.user.role == "Agric Officer") {
-		// 	res.redirect("/aoDashboard");
-		// } else if (req.user.role == "Farmer One") {
-		// 	res.redirect("/foDashboard");
-		// } else if (req.user.role == "Urban Farmer") {
+	if (req.user.role == "Agric Officer") {
+		res.redirect("/aoDashboard");
+	} else if (req.user.role == "Farmer One") {
+		res.redirect("/foDashboard");
+	} else if (req.user.role == "Urban Farmer") {
 		res.redirect("/ufDashboard");
-		// } else {
-		// 	res.send("Sorry either your session has expired or you are not a registered user.");
-		// }
-	} catch (error) {
-		console.log("cant log in", error);
+	} else {
+		res.send("Sorry either your session has expired or you are not a registered user.");
 	}
-	return true;
 
 	// if (req.user.role == "Agric Officer") {
 	// 	res.redirect("/aoDashboard");

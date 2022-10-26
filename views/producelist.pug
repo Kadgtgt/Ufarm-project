@@ -14,6 +14,7 @@ block content
                 th Category
                 th Name
                 th type
+                th Status
                 th Image 
                 th Update
                 th Change Status
@@ -26,6 +27,7 @@ block content
                             td #{product.prodCategory}
                             td #{product.prodName}
                             td #{product.prodType}
+                            td #{product.status}
                             td 
                                 img(src="/"+product.prodImage, alt="Image" width='150px' height="150px")
                             //- td #{moment(us
