@@ -8,7 +8,7 @@ router.get("/ufg", (req, res) => {
 	res.render("uFreg");
 });
 
-router.post("/uf", async (req, res) => {
+router.post("/ufg", async (req, res) => {
 	const signup = new Registration(req.body);
 	console.log(req.body);
 	await Registration.register(signup, req.body.password, (err) => {
@@ -20,6 +20,7 @@ router.post("/uf", async (req, res) => {
 		}
 	});
 });
+
 
 
 module.exports = router;

@@ -22,6 +22,10 @@ const registrationSchema = new mongoose.Schema({
 		type: String,
 	},
 
+	pos: {
+		type: String,
+	},
+
 	password: {
 		type: String,
 	},
@@ -30,7 +34,7 @@ const registrationSchema = new mongoose.Schema({
 		type: String,
 	},
 
-	activities:{
+	activities: {
 		type: String,
 	},
 
@@ -38,12 +42,36 @@ const registrationSchema = new mongoose.Schema({
 		type: String,
 	},
 
-	ward:{
+	ward: {
+		type: String,
+	},
+
+	residence: {
+		type: String,
+	},
+
+	direction: {
+		type: String,
+	},
+
+	activity: {
+		type: String,
+	},
+
+	dob: {
+		type: String,
+	},
+
+	ninNo: {
+		type: String,
+	},
+
+	division: {
 		type: String,
 	},
 });
 registrationSchema.plugin(passportLocalMongoose, {
-	usernameField: "uniqueNo"
+	usernameField: "uniqueNo",
 });
 
 module.exports = mongoose.model("Registration", registrationSchema);

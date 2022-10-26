@@ -21,4 +21,22 @@ router.post("/fo", async (req, res) => {
 	});
 });
 
+
+router.get("/for", (req, res) => {
+	res.render("foRegistration");
+});
+
+router.post("/for", async (req, res) => {
+	const register = new Registration(req.body);
+	console.log(req.body);
+	await Registration.register(register, req.body.uniqueNo, (err) => {
+		if (err) {
+			res.status(400).render("foRegistration");
+			console.log(err);
+		} else {
+			res.redirect("/folist");
+		}
+	});
+});
+
 module.exports = router;

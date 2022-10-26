@@ -17,54 +17,60 @@ main
       .col-lg-6.bg-dark.text-white.my-5
         form(action='/ao' method='post' name='registration' onsubmit="return Validate();" )
           .row.justify-content-center.align-items-center.g-2
-            .col-lg-6
+            .col-lg-3
               label(for='fName') First Name
               input#fName.input(type='text' name='fName' autofocus='')
               small#fNameerr  
-            .col-lg-6
-              label(for='lName') Last Name
+
+            .col-lg-3
+              label Last Name:
               input#lName.input(type='text' name='lName' autofocus='')
               small#lNameerr  
-            .col-lg-6
+
+            .col-lg-3
               label(for='uniqueNo') Unique Number
               input#uniqueNo.input(type='text' name='uniqueNo' autofocus='')
-              small#uniqueNoerr  
-            .col-md-6
+              small#uniqueNoerr 
+
+            .col-md-3
               label(for='tel') Phone Number
               input#tel.input(type='text' name='tel' autofocus='')
-              small#phoneNoerr  
-            .col-lg-6
+              small#phoneNoerr 
+
+            .col-lg-3
               label(for='email') Email Address
               input#email.input(type='text' name='email' autofocus='')
-              small#emailerr  
-            .col-lg-6
+              small#emailerr 
+
+            .col-lg-3
               label(for='role') Role
               select#select.input(name='role')
                 option(value='') select role
                 option(value='Agric Officer') Agric Officer
                 small#roleerr   
-            //
-              <div class="col-lg-6">
-              <label for="ward">Ward</label>
-              <select class="input" name="dropdown" id="select">
-              <option value="0"></option>
-              <option value="1">Masajja01</option>
-              <option value="2">Masajja02</option>
-              <option value="2">Masajja03</option>
-              <option value="2">Masajja04</option>
-              </select>
-              </div>
-            .col-lg-6
+            
+            .col-lg-3
               label(for='dor') Date of Registration:
               input#regex_date.input(type='date' name='dor')
-            small#dorerr   
-            .col-lg-6
+            small#dorerr  
+
+            .col-lg-3 
+              label Division: 
+              select#select.input(name='division')
+                option(value='') select division
+                option(value='Makindye') Makindye
+                option(value='Nakawa') Nakawa
+                option(value='Rubaga') Rubaga
+                option(value='Nansana') Nansana
+            
+            .col-lg-3
               label(for='password') Password
               br
               input#password.input(type='password' name='password')
               br
-              small#passworderr   
-            .col-lg-6
+              small#passworderr  
+
+            .col-lg-3
               label(for='gender') Gender:
               .radio
                 input#gender1(type='radio' name='gender' autocomplete='off' value='male' checked='')
@@ -73,6 +79,9 @@ main
                 span Female
                 small#gendererr
                 br
+
+              label
+
           .col-lg-6
             button.btn.btn-primary(type='submit') Sign up
 footer

@@ -10,14 +10,14 @@ router.post("/login", passport.authenticate("local", { failureRedirect: "/login"
 	req.session.user = req.user;
 	console.log("This is the current user", req.session.user);
 	try {
-		res.redirect("/ufDashboard");
+		// res.redirect("/ufDashboard");
 		// res.send("you have logged in");
 		// if (req.user.role == "Agric Officer") {
 		// 	res.redirect("/aoDashboard");
 		// } else if (req.user.role == "Farmer One") {
 		// 	res.redirect("/foDashboard");
 		// } else if (req.user.role == "Urban Farmer") {
-		// 	res.redirect("/ufDashboard");
+		res.redirect("/ufDashboard");
 		// } else {
 		// 	res.send("Sorry either your session has expired or you are not a registered user.");
 		// }
@@ -48,6 +48,10 @@ router.post("/logout", (req, res) => {
 			}
 		});
 	}
+});
+
+router.get("/signup", (req, res) => {
+	res.render("signup");
 });
 
 module.exports = router;

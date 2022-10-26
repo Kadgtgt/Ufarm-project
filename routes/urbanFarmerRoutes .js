@@ -23,7 +23,7 @@ router.get("/produceupload", (req,res)=>{
 	res.render("produceUpload");
 });
 
-router.get("/uploadproduce", async (req, res) => {
+router.get("/uploadedproduce", async (req, res) => {
 	const urbanFarmerList = await UFProdUploads.find({ role: "urbanfarmer" });
 	console.log(urbanFarmerList);
 	res.render("producelist", { products: urbanFarmerList });
@@ -34,7 +34,7 @@ router.get("/uploadproduce", async (req, res) => {
 // 	res.render("produce", { currentUser: req.session });
 // });
 
-router.post("/uploadproduce", upload.single("prodImage"), async (req, res) => {
+router.post("/uploadedproduce", upload.single("prodImage"), async (req, res) => {
 	console.log(req.body);
 	try {
 		const produce = new UFProdUploads(req.body);
@@ -94,7 +94,7 @@ router.get("/produce/approve/:id", async (req, res) => {
 router.post("/produce/approve", async (req, res) => {
 	try {
 		await Produce.findOneAndUpdate({ _id: req.query.id }, req.body);
-		res.redirect("/producelist");
+		res.redirect("producelist");
 	} catch (error) {
 		res.status(400).send("Unable to update produce");
 	}
