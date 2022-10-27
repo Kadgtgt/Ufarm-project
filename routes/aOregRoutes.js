@@ -1,25 +1,23 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/ao", (req, res) => {
-	res.render("aOreg");
-});
+// router.get("/ao", (req, res) => {
+// 	res.render("aOreg");
+// });
 
-// importing model
-const Registration = require("../model/User");
 
-router.post("/ao", async (req, res) => {
-	const signup = new Registration(req.body);
-	console.log(req.body);
-	await Registration.register(signup, req.body.password, (err) => {
-		if (err) {
-			res.status(400).render("aOreg");
-			console.log(err);
-		} else {
-			res.redirect("/login ");
-		}
-	});
-});
+// router.post("/ao", async (req, res) => {
+// 	const signup = new Registration(req.body);
+// 	console.log(req.body);
+// 	await Registration.register(signup, req.body.password, (err) => {
+// 		if (err) {
+// 			res.status(400).render("aOreg");
+// 			console.log(err);
+// 		} else {
+// 			res.redirect("/login ");
+// 		}
+// 	});
+// });
 
 // router.post("/ao", (req, res) => {
 // 	console.log(req.body);
@@ -41,6 +39,10 @@ router.post("/ao", async (req, res) => {
 router.get("/aor", (req, res) => {
 	res.render("aoRegistration");
 });
+
+
+// importing model
+const Registration = require("../model/User");
 
 router.post("/aor", async (req, res) => {
 	const register = new Registration(req.body);
