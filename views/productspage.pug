@@ -1,0 +1,185 @@
+doctype html
+head
+  title Products page
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS v5.2.0-beta1
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous')
+  link(rel='icon' href='/Images/fav.jpg')
+  link(rel='stylesheet' href='/css/productpage.css')
+  link(href='https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap' rel='stylesheet')
+header
+  // place navbar here
+  nav.navbar.navbar-light.bg-light.fixed-top
+    .container-fluid
+      img.image(src='/Images/fav.jpg')
+      h1.title Masajja Urban Farm
+      .my-list
+        ul
+          li
+            a.btn(href='/homepage') Home
+          li
+            a.btn(href='/html/about us.html us.html') About Us
+          li
+            a.btn(href='/html/help.html') Help
+          li
+            a.btn(href='/html/contact.html') Contacts
+main
+  link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet')
+  .container
+    .col-xs-12.col-md-6.bootstrap.snippets.bootdeys
+      // product
+      .product-content.product-wrap.clearfix
+        .row
+          .col-md-5.col-sm-12.col-xs-12
+            .product-image
+              img.img-responsive(src='/Images/eggs.jpg' alt='194x228')
+              span.tag2.hot
+                | HOT
+          .col-md-7.col-sm-12.col-xs-12
+            .product-deatil
+              h5.name
+                a(href='#')
+                  | Eggs
+                  span Organic
+              p.price-container
+                span UGX5000
+              span.tag1
+            .description
+              p Proin in ullamcorper lorem. Maecenas eu ipsum 
+            .product-info.smart-form
+              .row
+                .col-md-6.col-sm-6.col-xs-6
+                  a.btn.btn-success(href='') Book
+                  br
+                  // <a href="" class="btn btn-success">Order</a>
+                .col-md-6.col-sm-6.col-xs-6
+                  .rating
+                    label(for='stars-rating-5')
+                      i.fa.fa-star
+                    label(for='stars-rating-4')
+                      i.fa.fa-star
+                    label(for='stars-rating-3')
+                      i.fa.fa-star.text-primary
+                    label(for='stars-rating-2')
+                      i.fa.fa-star.text-primary
+                    label(for='stars-rating-1')
+                      i.fa.fa-star.text-primary
+      // end product
+    .col-xs-12.col-md-6.bootstrap.snippets.bootdeys
+      // product
+      .product-content.product-wrap.clearfix
+        .row
+          .col-md-5.col-sm-12.col-xs-12
+            .product-image
+              img.img-responsive(src='/Images/cassava.jpg' alt='194x228')
+              span.tag2.hot
+                | HOT
+          .col-md-7.col-sm-12.col-xs-12
+            .product-deatil
+              h5.name
+                a(href='#')
+                  | Cassava
+                  span Non Organic
+              p.price-container
+                span UGX20000
+              span.tag1
+            .description
+              p Proin in ullamcorper lorem. Maecenas eu ipsum 
+            .product-info.smart-form
+              .row
+                .col-md-6.col-sm-6.col-xs-6
+                  a.btn.btn-success(href='') Book
+                .col-md-6.col-sm-6.col-xs-6
+                  .rating
+                    label(for='stars-rating-5')
+                      i.fa.fa-star
+                    label(for='stars-rating-4')
+                      i.fa.fa-star
+                    label(for='stars-rating-3')
+                      i.fa.fa-star.text-primary
+                    label(for='stars-rating-2')
+                      i.fa.fa-star.text-primary
+                    label(for='stars-rating-1')
+                      i.fa.fa-star.text-primary
+      // end product
+    .col-xs-12.col-md-6.bootstrap.snippets.bootdeys
+      // product
+      .product-content.product-wrap.clearfix
+        .row
+          .col-md-5.col-sm-12.col-xs-12
+            .product-image
+              img.img-responsive(src='/Images/tomato.jpg' alt='194x228')
+              span.tag2.hot
+                | HOT
+          .col-md-7.col-sm-12.col-xs-12
+            .product-deatil
+              h5.name
+                a(href='#')
+                  | Tomatoes
+                  span Organic
+              p.price-container
+                span UGX10000
+              span.tag1
+            .description
+              p Proin in ullamcorper lorem. Maecenas eu ipsum 
+            .product-info.smart-form
+              .row
+                .col-md-6.col-sm-6.col-xs-6
+                  a.btn.btn-success(href='javascript:void(0);') Book
+                .col-md-6.col-sm-6.col-xs-6
+                  .rating
+                    label(for='stars-rating-5')
+                      i.fa.fa-star
+                    label(for='stars-rating-4')
+                      i.fa.fa-star
+                    label(for='stars-rating-3')
+                      i.fa.fa-star.text-primary
+                    label(for='stars-rating-2')
+                      i.fa.fa-star.text-primary
+                    label(for='stars-rating-1')
+                      i.fa.fa-star.text-primary
+      // end product
+    .col-xs-12.col-md-6.bootstrap.snippets.bootdeys
+      // product
+      .product-content.product-wrap.clearfix
+        .row
+          .col-md-5.col-sm-12.col-xs-12
+            .product-image
+              img.img-responsive(src='/Images/onions.jpg' alt='194x228')
+              span.tag2.hot
+                | HOT
+          .col-md-7.col-sm-12.col-xs-12
+            .product-deatil
+              h5.name
+                a(href='#')
+                  | Onions
+                  span Non Organic
+              p.price-container
+                span UGX1000
+              span.tag1
+            .description
+              p Proin in ullamcorper lorem. Maecenas eu ipsum 
+            .product-info.smart-form
+              .row
+                .col-md-6.col-sm-6.col-xs-6
+                  a.btn.btn-success(href='javascript:void(0);') Book
+                .col-lg-3.col-sm-6.col-xs-6
+                  .rating
+                    label(for='stars-rating-5')
+                      i.fa.fa-star
+                    label(for='stars-rating-4')
+                      i.fa.fa-star
+                    label(for='stars-rating-3')
+                      i.fa.fa-star.text-primary
+                    label(for='stars-rating-2')
+                      i.fa.fa-star.text-primary
+                    label(for='stars-rating-1')
+                      i.fa.fa-star.text-primary
+      // end product
+footer
+  // place footer here
+// Bootstrap JavaScript Libraries
+script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js' integrity='sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js' integrity='sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK' crossorigin='anonymous')

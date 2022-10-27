@@ -11,8 +11,8 @@ block content
     table.table.table-bordered 
         thead
             tr
-                th Category
                 th Name
+                th Category 
                 th type
                 th Status
                 th Image 
@@ -24,8 +24,8 @@ block content
                 each product in products
                     if product.status == "pending"
                         tr
-                            td #{product.prodCategory}
                             td #{product.prodName}
+                            td #{product.prodCategory}
                             td #{product.prodType}
                             td #{product.status}
                             td 
@@ -44,4 +44,3 @@ block content
             a(class='button' href='/aoDashboard') Back
 
 block footer
-    div.col-md-12 ©️ 2022 Refactory Cohort 12, NodeJS by Irene.

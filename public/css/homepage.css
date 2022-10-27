@@ -122,6 +122,11 @@ body {
 	background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7)), url(../Images/farmer.jpg);
 }
 
+#category{
+	background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7)), url(../Images/cat.jpg);
+
+}
+
 span {
 	background: gray;
 	width: 0;

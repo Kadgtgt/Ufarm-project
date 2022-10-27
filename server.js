@@ -4,13 +4,14 @@ const mongoose = require("mongoose");
 const config = require("./config/db");
 const passport = require("passport");
 const path = require("path");
-
+const session = require("express-session")
 // defining expressSession
-const expressSession = require("express-session")({
-	secret: "secret",
-	resave: false,
-	saveUninitialized: false,
-});
+// const expressSession = require("express-session")({
+// 	secret: "secret",
+// 	resave: false,
+// 	saveUninitialized: false,
+// });
+
 
 // importing user model
 const Registration = require("./model/User");
@@ -51,7 +52,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 // app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use("/public/uploads", express.static(__dirname + "/public/uploads"));
-app.use(expressSession);
+app.use(session({
+	secret: "true",
+	resave: false,
+	saveUninitialized: false,
+}));
 
 // passport configuration middleware
 app.use(passport.initialize());

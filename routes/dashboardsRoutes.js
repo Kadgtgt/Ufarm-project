@@ -3,12 +3,12 @@ const router = express.Router();
 const connectEnsureLogin = require("connect-ensure-login");
 
 // AO dashboard
-router.get("/aoDashboard", (req, res) => {
-	res.render("aoDashboard");
+router.get("/aoDashboard",connectEnsureLogin.ensureLoggedIn(), (req, res) => {
+	res.render("trial");
 });
 
 // FO dashboard
-router.get("/foDashboard", (req, res) => {
+router.get("/fODashboard", (req, res) => {
 	res.render("foDashboard");
 });
 

@@ -23,7 +23,7 @@ router.get("/produceupload", (req,res)=>{
 	res.render("produceUpload");
 });
 
-router.get("/uploadedproduce", async (req, res) => {
+router.get("/producelist", async (req, res) => {
 	const urbanFarmerList = await UFProdUploads.find({ role: "Urban Farmer" });
 	console.log(urbanFarmerList);
 	res.render("producelist", { products: urbanFarmerList });

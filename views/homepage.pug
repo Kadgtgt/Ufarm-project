@@ -20,7 +20,7 @@ header
           li
             a.btn(href='#') Home
           li
-            a.btn(href='/html/products.html') Products
+            a.btn(href='/productspage') Products
           li
             a.btn(href='/html/about us.html') About Us
           li
@@ -34,6 +34,7 @@ header
         p.admin-login
           | For only Admins.
         a.btn-admin(href='') Login
+        a.btn-admin(href='/admins') DashBoards
 main
   .image-wrapper
     .intro
@@ -54,7 +55,7 @@ main
                 | Organic|Non Organic.
               p.card-text
                 | View Our Products from here.
-              a.btn.mr-2(href='')
+              a.btn.mr-2(href='/productspage')
                 i.fas.fa-link
                 | VIEW
         .col-md-4
@@ -64,15 +65,17 @@ main
               h6.card-subtitle.mb-2.text-muted Mukwaya Eric.
               p.card-text
                 | Every month, the best outstanding farmer is nominated.
-              a.btn.mr-2(href='') Check Out
+              //- a.btn.mr-2(href='') Check Out
         .col-md-4
-          #farmer.card(style='width: 30rem')
-            .card-body
-              h5.card-title BEST FARMER
-              h6.card-subtitle.mb-2.text-muted Mukwaya Eric.
+           .card(style='width: 30rem')
+            #category.card-body
+              h5.card-title ACTIVITIES
+              h6.card-subtitle.mb-2.text-muted .
               p.card-text
-                | Every month, the best outstanding farmer is nominated.
-              a.btn.mr-2(href='') Check Out
+                | Check Out our Farming Activities.
+              a.btn.mr-2(href='') Horticulture
+              a.btn.mr-2(href='') Poultry
+              a.btn.mr-2(href='') Diary
   // Button to Open the Modal
   button.btn.btn-contact(type='button' style='margin-top: 15px' data-bs-toggle='modal' data-bs-target='#myModal')
     | Contact Us

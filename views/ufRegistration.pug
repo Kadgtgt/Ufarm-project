@@ -1,6 +1,6 @@
 doctype html
 head
-  title FO Registration
+  title UF Registration
   // Required meta tags
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
@@ -11,11 +11,11 @@ header
   // place navbar here
 main
   .container(style='transform:translateY(50px);')
-    h2  Register Farmer One
+    h2  Register Urban Farmer
     hr
     .row.justify-content-center.align-items-center.my-5.cage
       .col-lg-2.cage
-        form(action='/for' name='register'  method="POST")
+        form(action='/ufr' name='register'  method="POST")
           .row.justify-content-center.align-items-center.g-2.lamar
             .col-lg-3.form-zones
               label First Name:
@@ -54,10 +54,6 @@ main
                 option(value='W03') W03
                 option(value='W04') W04
 
-            .col-lg-3.form-zones
-              label Residence Type:
-              input.form-inputs(name='residence' type='text')
-
             .col-lg-3.form-zones 
               label Date of Birth: 
               input.form-inputs(name='dob' type='date')
@@ -71,11 +67,7 @@ main
               //- input.form-inputs(name='role')
               select.input(name='role')
                 option(value='0')
-                option(value='Farmer One') Farmer One
-            
-            .col-lg-3.form-zones
-              label Period of Stay:
-              input.form-inputs(name='pos' type='text' style='padding:0;')  
+                option(value='Farmer One') Urban Farmer
             
             .col-lg-3.form-zones
               label Gender:
@@ -84,10 +76,6 @@ main
                 span Male
                 input#gender2(type='radio' name='gender' autocomplete='off' value='female')
                 span Female
-
-            .col-lg-3.form-zones
-              label Direction:
-              textarea#direction.form-inputs(type='text' name='direction' cols='30' rows='10')
 
             .col-lg-3.form-z0nes 
               label Password: 

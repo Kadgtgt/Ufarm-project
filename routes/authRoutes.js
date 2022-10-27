@@ -3,31 +3,24 @@ const router = express.Router();
 const passport = require("passport");
 
 router.get("/login", (req, res) => {
-	res.render("login");
+	// res.render("login");
+	res.render("trial-login")
 });
 
 router.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
 	req.session.user = req.user;
-	console.log("This is the current user", req.session.user);
-	if (req.user.role == "Agric Officer") {
+	const user = req.session.user;
+	console.log("This is the user", user.role);
+	if (user.role == "Agric Officer") {
 		res.redirect("/aoDashboard");
-	} else if (req.user.role == "Farmer One") {
+		// res.send("i am ", user.role);
+	} else if (user.role == "Farmer One") {
 		res.redirect("/foDashboard");
-	} else if (req.user.role == "Urban Farmer") {
+	} else if (user.role == "Urban Farmer") {
 		res.redirect("/ufDashboard");
 	} else {
-		res.send("Sorry either your session has expired or you are not a registered user.");
+		res.send("you are not a registered user");
 	}
-
-	// if (req.user.role == "Agric Officer") {
-	// 	res.redirect("/aoDashboard");
-	// } else if (req.user.role == "Farmer One") {
-	// 	res.redirect("/foDashboard");
-	// } else if (req.user.role == "Urban Farmer") {
-	// 	res.redirect("/ufDashboard");
-	// } else {
-	// 	res.send("Sorry either your session has expired or you are not a registered user.");
-	// }
 });
 
 //    Logout route
