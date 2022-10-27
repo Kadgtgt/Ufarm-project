@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-// importing model
-const Registration = require("../model/User");
-
 router.get("/ufg", (req, res) => {
 	res.render("uFreg");
 });
+
+// importing model
+const Registration = require("../model/User");
 
 router.post("/ufg", async (req, res) => {
 	const signup = new Registration(req.body);
@@ -40,7 +40,7 @@ router.post("/ufr", async (req, res) => {
 
 router.get("/uflist", async (req, res) => {
 	try {
-		let items = await Registration.find({ role: "Urban Farmer" });
+		let items = await Registration.find({ role: "UrbanFarmer" });
 		console.log(items);
 		res.render("uflist", { urbanfarmers: items });
 	} catch (error) {

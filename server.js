@@ -4,13 +4,14 @@ const mongoose = require("mongoose");
 const config = require("./config/db");
 const passport = require("passport");
 const path = require("path");
-const session = require("express-session")
+// const session = require("express-session")
+
 // defining expressSession
-// const expressSession = require("express-session")({
-// 	secret: "secret",
-// 	resave: false,
-// 	saveUninitialized: false,
-// });
+const expressSession = require("express-session")({
+	secret: "secret",
+	resave: false,
+	saveUninitialized: false,
+});
 
 
 // importing user model
@@ -50,20 +51,15 @@ app.set("views", path.join(__dirname, "views"));
 // const bodyParser = require("body-parser");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
-// app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use("/public/uploads", express.static(__dirname + "/public/uploads"));
-app.use(session({
-	secret: "true",
-	resave: false,
-	saveUninitialized: false,
-}));
+app.use(expressSession);
 
 // passport configuration middleware
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(Registration.createStrategy());
 passport.serializeUser(Registration.serializeUser());
-passport.deserializeUser(Registration.deserializeUser);
+passport.deserializeUser(Registration.deserializeUser());
 
 // ROUTES
 app.use("/", aOregRoutes);

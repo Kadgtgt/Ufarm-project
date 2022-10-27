@@ -1,12 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-// importing model
-const Registration = require("../model/User");
-
 router.get("/fo", (req, res) => {
 	res.render("fOreg");
 });
+
 
 router.post("/fo", async (req, res) => {
 	const signup = new Registration(req.body);
@@ -22,9 +20,14 @@ router.post("/fo", async (req, res) => {
 });
 
 
+
 router.get("/for", (req, res) => {
 	res.render("foRegistration");
 });
+
+// importing model
+const Registration = require("../model/User");
+
 
 router.post("/for", async (req, res) => {
 	const register = new Registration(req.body);

@@ -3,20 +3,19 @@ const router = express.Router();
 const passport = require("passport");
 
 router.get("/login", (req, res) => {
-	// res.render("login");
-	res.render("trial-login")
+	res.render("login");
+	// res.render("trial-login")
 });
 
 router.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
 	req.session.user = req.user;
 	const user = req.session.user;
 	console.log("This is the user", user.role);
-	if (user.role == "Agric Officer") {
+	if (user.role == "AgricOfficer") {
 		res.redirect("/aoDashboard");
-		// res.send("i am ", user.role);
-	} else if (user.role == "Farmer One") {
+	} else if (user.role == "FarmerOne") {
 		res.redirect("/foDashboard");
-	} else if (user.role == "Urban Farmer") {
+	} else if (user.role == "UrbanFarmer") {
 		res.redirect("/ufDashboard");
 	} else {
 		res.send("you are not a registered user");

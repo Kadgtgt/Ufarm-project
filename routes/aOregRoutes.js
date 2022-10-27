@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-// importing model
-const Registration = require("../model/User");
-
 router.get("/ao", (req, res) => {
 	res.render("aOreg");
 });
+
+// importing model
+const Registration = require("../model/User");
 
 router.post("/ao", async (req, res) => {
 	const signup = new Registration(req.body);
@@ -16,7 +16,7 @@ router.post("/ao", async (req, res) => {
 			res.status(400).render("aOreg");
 			console.log(err);
 		} else {
-			res.redirect("/folist ");
+			res.redirect("/login ");
 		}
 	});
 });
@@ -37,6 +37,23 @@ router.post("/ao", async (req, res) => {
 // 	davis.save();
 // 	res.send("user registered");
 // });
+
+router.get("/aor", (req, res) => {
+	res.render("aoRegistration");
+});
+
+router.post("/aor", async (req, res) => {
+	const register = new Registration(req.body);
+	console.log(req.body);
+	await Registration.register(register, req.body.uniqueNo, (err) => {
+		if (err) {
+			res.status(400).render("aoRegistration");
+			console.log(err);
+		} else {
+			res.redirect("/login");
+		}
+	});
+});
 
 router.get("/", (req, res) => {
 	res.render("landingpage");
