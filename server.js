@@ -13,7 +13,6 @@ const expressSession = require("express-session")({
 	saveUninitialized: false,
 });
 
-
 // importing user model
 const Registration = require("./model/User");
 
@@ -25,6 +24,7 @@ const registrationRoutes = require("./routes/registrationRoutes");
 const authRoutes = require("./routes/authRoutes");
 const dashboardsRoutes = require("./routes/dashboardsRoutes");
 const urbanFarmerRoutes = require("./routes/urbanFarmerRoutes ");
+// const reportsRoutes = require("./routes/reportsRoutes");
 
 // INSTANTIATIONS
 const app = express();
@@ -69,6 +69,7 @@ app.use("/", registrationRoutes);
 app.use("/", authRoutes);
 app.use("/", dashboardsRoutes);
 app.use("/", urbanFarmerRoutes);
+// app.use("/", reportsRoutes);
 
 //Always the second last line in the Express server
 app.get("*", (req, res) => {
