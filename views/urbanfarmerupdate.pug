@@ -1,0 +1,42 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='bootstrap-css/css/bootstrap.css')
+    link(rel='stylesheet' href='/css/style.css')
+    title Registration
+nav.navbar.navbar-expand-lg.bg-light.pb-4
+    
+.container-fluid.form-style
+    form#signup.form(action='/urbanfarmer/update?id='+urbanfarmers._id name='registration' method='POST')
+        h3 Update Urban Farmer
+        hr
+        .row
+            .col
+                .form-field
+                    label(for='') Urban Farmer First Name:
+                    select(name='fName')
+                        if urbanfarmers.length
+                            each urbanfarmer in urbanfarmers
+                                option(value='')
+                                option(value='urbanfarmer._id')  #{urbanfarmer.fName+' '+urbanfarmer.lName}
+                //- .form-field
+                //-         label(for='') Urban Farmer Last Name:
+                //-         select(name='fName')
+                //-             if urbanfarmers.length
+                //-                 each urbanfarmer in urbanfarmers
+                //-                     option(value='')
+                //-                     option(value='urbanfarmer._id') #({urbanfarmer.lName'})
+            .col
+                .form-field
+                    label(for='')
+                        | UniqueNo:
+                    input#ward(type='text' name='uniqueNo')
+            .col
+                .form-field
+                    label(for='') Phone number:
+                input(name='tel' type='text')   
+            .form-field
+                input.btn.register-btn(type='submit' value='Register')
+script(src='bootstrap-js/js/bootstrap.bundle.js')

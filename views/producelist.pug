@@ -15,9 +15,13 @@ block content
                 th Category 
                 th type
                 th Status
-                th Image 
+                th Price 
+                th Quantity 
+                th Mode of Delivery 
+                th Mode of Payment 
+                th Image
                 th Update
-                th Change Status
+                //- th Change Status
                 th Delete
         tbody
             if products.length
@@ -28,13 +32,17 @@ block content
                             td #{product.prodCategory}
                             td #{product.prodType}
                             td #{product.status}
+                            td #{product.price}
+                            td #{product.prodQuantity}
+                            td #{product.deliveryMode}
+                            td #{product.paymentMode}
                             td 
                                 img(src="/"+product.prodImage, alt="Image" width='150px' height="150px")
                             //- td #{moment(us
                             td
                                 a.btn.btn-primary.btn-block(href='/produce/update/'+product._id) Update
-                            td
-                               a.btn.btn-secondary.btn-block(href='/produce/approve/'+product._id) Approve
+                            //- td
+                            //-    a.btn.btn-secondary.btn-block(href='/produce/approve/'+product._id) Approve
                             td
                                 form(method="post" action='/produce/delete')
                                     input(type="hidden" placeholder="" name="id", value=product._id)

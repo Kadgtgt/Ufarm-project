@@ -66,4 +66,25 @@ router.post('/for', async (req, res) =>{
     }
 });
 
+// Updating  farmer one
+router.get("/farmerone/update/:id", async (req, res) => {
+	try {
+		const updateFarmerOne = await Registration.findOne({ _id: req.params.id });
+		res.render("farmeroneupdate", {farmerones: updateFarmerOne });
+	} catch (error) {
+		res.status(400).send("Unable to update farmerone");
+	}
+});
+
+router.post("/farmerone/update", async (req, res) => {
+	try {
+		await Registration.findOneAndUpdate({ _id: req.query.id }, req.body);
+		res.redirect("/folist");
+	} catch (error) {
+		res.status(400).send("Unable to update produce");
+	}
+});
+
+
+
 module.exports = router;

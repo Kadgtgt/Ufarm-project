@@ -31,8 +31,7 @@ block content
                         td #{farmerone.ninNO}
                         //- td #{moment(us
                         td
-                            a
-                                button.btn.btn-danger.btn-block(href='/farmerOne/update/'+farmerone._id) Update
+                            a.btn.btn-danger.btn-block(href='/farmerOne/update/'+farmerone._id) Update
                         td
                              form(method="post" action='/farmerOne/delete')
                                 input(type="hidden" placeholder="" name="id", value=farmerone._id)

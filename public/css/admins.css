@@ -9,12 +9,12 @@ body {
 
 .navbar-brand {
 	font-family: "Fredoka One", cursive;
-	transform: translateX(-400px);
+	transform: translateX(-200px);
 	font-size: 50px;
 }
 
 .image {
-	width: 5pc;
+	width: 3pc;
 }
 
 .content {

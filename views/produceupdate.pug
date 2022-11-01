@@ -15,12 +15,12 @@ nav.navbar.navbar-expand-lg.bg-light.pb-4
         .row
             .col
                 .form-field
-                    label(for='producename') Produce Name:
-                    select(name='producename')
-                        option(value="Eggs" selected = product.producename === "Eggs") Eggs
-                        option(value="Broccoli" selected = product.producename === 'Brocoli') Brocoli
-                        option(value="Carrots" selected = product.producename === 'Carrots') Carrots
-                        option(value="Cassava" selected = product.producename === 'Cassava') Cassava
+                    label(for='productname') Product Name:
+                    select(name='prodName')
+                        option(value="Eggs" selected = product.prodName === "Eggs") Eggs
+                        option(value="Broccoli" selected = product.prodName === 'Brocoli') Brocoli
+                        option(value="Carrots" selected = product.prodName === 'Carrots') Carrots
+                        option(value="Cassava" selected = product.prodName === 'Cassava') Cassava
         .row
             .col
                 .form-field
@@ -33,19 +33,19 @@ nav.navbar.navbar-expand-lg.bg-light.pb-4
                     label(for='')
                         | Quantity:
                         small  *
-                    input#ward(type='number' name='quantity' autocomplete='off' value=product.quantity)
+                    input#ward(type='number' name='prodQuantity' autocomplete='off' value=product.quantity)
             .col
                 .form-field
                     label(for='') Mode of Delivery:
-                    select(name='deliverymode')
-                        option(value="pickup" selected = produce.deliverymode === "pickup") Pick Up
-                        option(value="homedelivery" selected = produce.deliverymode === "homedelivery") Home Delivery
+                    select(name='deliveryMode')
+                        option(value="pickup" selected = product.prodName === "pickup") Pick Up
+                        option(value="homedelivery" selected = product.prodName === "homedelivery") Home Delivery
             .col
                 .form-field
                     label Mode of Payment:
                     select(name='modeofpayment')
-                        option(value="cash" selected = product.producename === 'cash') Cash
-                        option(value="mobilemoney" selected = product.producename === 'mobilemoney') Mobile Money   
+                        option(value="cash" selected = product.prodName === 'cash') Cash
+                        option(value="mobilemoney" selected = product.prodName === 'mobilemoney') Mobile Money   
             .form-field
                 input.btn.register-btn(type='submit' value='Register')
 script(src='bootstrap-js/js/bootstrap.bundle.js')

@@ -16,7 +16,6 @@ block content
                 th UniqueNO
                 th Phone Number
                 th Update
-                th Delete
         tbody
             if urbanfarmers.length
                 each urbanfarmer in urbanfarmers
@@ -27,12 +26,11 @@ block content
                         td #{urbanfarmer.tel}
                         //- td #{moment(us
                         td
-                            a
-                                button.btn.btn-primary.btn-block(href='/urbanfarmer/update/'+urbanfarmer._id) Update
-                        td
-                             form(method="post" action='/urbanfarmer/delete')
-                                input(type="hidden" placeholder="" name="id", value=urbanfarmer._id)
-                                button.btn.btn-danger.btn-block(type="submit") Delete
+                            a.btn.btn-primary.btn-block(href='/urbanfarmer/update/'+urbanfarmer._id) Update
+                        //- td
+                        //-      form(method="post" action='/urbanfarmer/delete')
+                        //-         input(type="hidden" placeholder="" name="id", value=urbanfarmer._id)
+                        //-         button.btn.btn-danger.btn-block(type="submit") Delete
     div.form-row
         div.col.form-group
             a(class='button' href='/foDashboard') Back

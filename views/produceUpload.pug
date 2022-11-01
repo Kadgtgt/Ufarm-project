@@ -15,11 +15,15 @@ main
     hr
     .row.justify-content-center.align-items-center.my-5.cage
       .col-lg-2.cage
-        form(action='/uploadproduce' name='register' enctype="multipart/form-data" method="POST")
+        form(action='/produceupload' method="POST" enctype="multipart/form-data")
           .row.justify-content-center.align-items-center.g-2.lamar
             .col-lg-3.form-zones
               label Supplier Name:
-              input.form-inputs(name='supplierName' type='text')
+              select#select.form-select(name='supplierName')
+                if urbanfarmers.length
+                  each urbanfarmer in urbanfarmers
+                    option(value='')
+                    option(value="urbanfarmer._id") #{urbanfarmer.fName+' '+urbanfarmer.lName}
             .col-lg-3.form-zones
               label Product name:
               input.form-inputs(name='prodName' type='text')
@@ -41,15 +45,18 @@ main
                 option(value='Diary') Diary
             .col-lg-3.form-zones
               label Unique No:
-              input.form-inputs(name='uniqueNo' type='text')
+              select#select.form-select(name='uniqueNo')
+                if urbanfarmers.length
+                    each urbanfarmer in urbanfarmers
+                      option(value='')
+                      option(value="urbanfarmer._id" type='text' style='text-align:center;') #{urbanfarmer.uniqueNo}
             .col-lg-3.form-zones
               label Ward:
               select#select.form-select(name='wardName')
-                option(value='' style='text-align:center;') Select option
-                option(value='W01') W01
-                option(value='W02') W02
-                option(value='W03') W03
-                option(value='W04') W04
+                if urbanfarmers.length
+                    each urbanfarmer in urbanfarmers
+                      option(value='')
+                      option(value="urbanfarmer._id" style='text-align:center;') #{urbanfarmer.ward}
             .col-lg-12.form-radio
               label Product type:
               .radio
@@ -68,7 +75,7 @@ main
                 option(value='Pay with cash') Pay with cash
             .col-sm-12.col-lg-2.form-zones
               label Price:(Ugx)
-              input.form-inputs(type='text' name='number' placeholder='Ugx:')
+              input.form-inputs(type='number' name='price' placeholder='Ugx:')
             .col-lg-3.form-zones
               label Mode of Delivery:
               select#select.form-select(name='deliveryMode')
@@ -79,6 +86,6 @@ main
               label Direction:
               textarea#direction.form-inputs(name='direction' cols='30' rows='10')
             .col-lg-6
-              button.btn.btn-primary(type='submit') Sign up
+              button.btn.btn-primary(type='submit') UPLOAD
 footer
   // place footer here

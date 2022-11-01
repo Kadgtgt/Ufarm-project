@@ -49,4 +49,23 @@ router.get("/uflist", async (req, res) => {
 	}
 });
 
+// Updating urban farmers
+router.get("/urbanfarmer/update/:id", async (req, res) => {
+	try {
+		const updateUrbanFarmer = await Registration.findOne({ _id: req.params.id });
+		res.render("urbanfarmerupdate", {urbanfarmers: updateUrbanFarmer });
+	} catch (error) {
+		res.status(400).send("Unable to update produce");
+	}
+});
+
+router.post("/urbanfarmer/update", async (req, res) => {
+	try {
+		await Registration.findOneAndUpdate({ _id: req.query.id }, req.body);
+		res.redirect("/uflist");
+	} catch (error) {
+		res.status(400).send("Unable to update produce");
+	}
+});
+
 module.exports = router;

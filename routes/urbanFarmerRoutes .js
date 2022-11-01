@@ -4,7 +4,8 @@ const multer = require("multer");
 const connectEnsureLogin = require("connect-ensure-login");
 
 // Importing Model
-const UFProdUploads = require("../model/UrbanFarmerUpload");
+const Registration = require("../model/User");
+
 
 // image upload
 var storage = multer.diskStorage({
@@ -19,9 +20,7 @@ var storage = multer.diskStorage({
 // instantiate variable upload to store multer functionality to upload image
 var upload = multer({ storage: storage });
 
-router.get("/produceupload", (req,res)=>{
-	res.render("produceUpload");
-});
+const UFProdUploads = require("../model/UrbanFarmerUpload");
 
 router.get("/producelist", async (req, res) => {
 	const urbanFarmerList = await UFProdUploads.find({ role: "UrbanFarmer" });
@@ -34,33 +33,39 @@ router.get("/producelist", async (req, res) => {
 // 	res.render("produce", { currentUser: req.session });
 // });
 
-router.post("/uploadedproduce", upload.single("prodImage"), async (req, res) => {
+
+router.get("/produceupload", async (req, res) => {
+	let urbanFarmerList = await Registration.find({ role: "UrbanFarmer" });
+	res.render("produceUpload", { urbanfarmers: urbanFarmerList });
+});
+
+router.post("/produceupload", upload.single("prodImage"), async (req, res) => {
 	console.log(req.body);
 	try {
 		const produce = new UFProdUploads(req.body);
 		produce.prodImage = req.file.path;
 		console.log("This is my produce", produce);
 		await produce.save();
-		res.redirect("/uploadproduce");
+		res.redirect("/producelist");
 	} catch (error) {
-		res.status(400).send("Can't save this image");
+		res.status(400).send("Can't save produce");
 		console.log(error);
 	}
 });
 
-router.get("/producelist", async (req, res) => {
-	try {
-		let products = await Produce.find();
-		res.render("producelist", { products: products });
-	} catch (error) {
-		res.status(400).send("Unable to get Produce list");
-	}
-});
+// router.get("/producelist", async (req, res) => {
+// 	try {
+// 		let products = await UFProdUploads.find();
+// 		res.render("producelist", { products: products });
+// 	} catch (error) {
+// 		res.status(400).send("Unable to get Produce list");
+// 	}
+// });
 
 // Updating Produce
 router.get("/produce/update/:id", async (req, res) => {
 	try {
-		const updateProduct = await Produce.findOne({ _id: req.params.id });
+		const updateProduct = await UFProdUploads.findOne({ _id: req.params.id });
 		res.render("produceupdate", { product: updateProduct });
 	} catch (error) {
 		res.status(400).send("Unable to update produce");
@@ -69,21 +74,21 @@ router.get("/produce/update/:id", async (req, res) => {
 
 router.post("/produce/update", async (req, res) => {
 	try {
-		await Produce.findOneAndUpdate({ _id: req.query.id }, req.body);
+		await UFProdUploads.findOneAndUpdate({ _id: req.query.id }, req.body);
 		res.redirect("/producelist");
 	} catch (error) {
 		res.status(400).send("Unable to update produce");
 	}
 });
-// // Dashboard Route
-// router.get("/UFdashboard", (req, res) => {
-// 	res.render("dashboards/UF-dashboard");
-// });
+// Dashboard Route
+router.get("/UFdashboard", (req, res) => {
+	res.render("dashboards/UF-dashboard");
+});
 
 // approve
 router.get("/produce/approve/:id", async (req, res) => {
 	try {
-		const updateProduct = await Produce.findOne({ _id: req.params.id });
+		const updateProduct = await UFProdUploads.findOne({ _id: req.params.id });
 		res.render("approve", { product: updateProduct });
 		console.log("Produce approved", updateProduct);
 	} catch (error) {
@@ -93,7 +98,7 @@ router.get("/produce/approve/:id", async (req, res) => {
 
 router.post("/produce/approve", async (req, res) => {
 	try {
-		await Produce.findOneAndUpdate({ _id: req.query.id }, req.body);
+		await UFProdUploads.findOneAndUpdate({ _id: req.query.id }, req.body);
 		res.redirect("/producelist");
 	} catch (error) {
 		res.status(400).send("Unable to approve produce");
@@ -113,10 +118,19 @@ router.get("/produce/available/:id", async (req, res) => {
 
 router.post("/produce/available", async (req, res) => {
 	try {
-		await Produce.findOneAndUpdate({ _id: req.query.id }, req.body);
+		await UFProdUploads.findOneAndUpdate({ _id: req.query.id }, req.body);
 		res.redirect("/producelist");
 	} catch (error) {
 		res.status(400).send("Unable to update produce");
+	}
+});
+
+router.post("/produce/delete", async (req, res) => {
+	try {
+		await UFProdUploads.deleteOne({ _id: req.body.id });
+		res.redirect("back");
+	} catch (error) {
+		res.send(400).send("Sorry we were unable to delete product");
 	}
 });
 
