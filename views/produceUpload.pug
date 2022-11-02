@@ -23,7 +23,7 @@ main
                 if urbanfarmers.length
                   each urbanfarmer in urbanfarmers
                     option(value='')
-                    option(value="urbanfarmer._id") #{urbanfarmer.fName+' '+urbanfarmer.lName}
+                    option(value=urbanfarmer._id) #{urbanfarmer.fName+' '+urbanfarmer.lName}
             .col-lg-3.form-zones
               label Product name:
               input.form-inputs(name='prodName' type='text')
@@ -49,14 +49,14 @@ main
                 if urbanfarmers.length
                     each urbanfarmer in urbanfarmers
                       option(value='')
-                      option(value="urbanfarmer._id" type='text' style='text-align:center;') #{urbanfarmer.uniqueNo}
+                      option(value=urbanfarmer.uniqueNo type='text' style='text-align:center;') #{urbanfarmer.uniqueNo}
             .col-lg-3.form-zones
               label Ward:
-              select#select.form-select(name='wardName')
+              select#select.form-select(name='ward')
                 if urbanfarmers.length
                     each urbanfarmer in urbanfarmers
                       option(value='')
-                      option(value="urbanfarmer._id" style='text-align:center;') #{urbanfarmer.ward}
+                      option(value=urbanfarmer._ward style='text-align:center;') #{urbanfarmer.ward}
             .col-lg-12.form-radio
               label Product type:
               .radio

@@ -21,7 +21,7 @@ block content
                 th Mode of Payment 
                 th Image
                 th Update
-                //- th Change Status
+                th Change Status
                 th Delete
         tbody
             if products.length
@@ -41,8 +41,8 @@ block content
                             //- td #{moment(us
                             td
                                 a.btn.btn-primary.btn-block(href='/produce/update/'+product._id) Update
-                            //- td
-                            //-    a.btn.btn-secondary.btn-block(href='/produce/approve/'+product._id) Approve
+                            td
+                               a.btn.btn-secondary.btn-block(href='/produce/approve/'+product._id) Approve
                             td
                                 form(method="post" action='/produce/delete')
                                     input(type="hidden" placeholder="" name="id", value=product._id)

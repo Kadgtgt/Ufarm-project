@@ -34,7 +34,7 @@ nav.navbar.navbar-expand-lg.bg-light.pb-4
             form.d-flex.mt-2(role='search')
                 a.btn.btn-style(href='home-page.html') Back
 .container-fluid.form-style
-    form#signup.form(action='/produce/update?id='+item._id name='registration' method='POST')
+    form#signup.form(action='/produce/available?id='+item._id name='registration' method='POST')
         h3 Update Produce 
         hr
         .row
@@ -42,9 +42,9 @@ nav.navbar.navbar-expand-lg.bg-light.pb-4
                 .form-field
                     label(for='availability') Produce Availability:
                     select(name='status')
-                        option(value="available" selected = item.availability === "available") Available
-                        option(value="booked" selected = item.status === 'booked') Booked
-                        option(value="N/A" selected = item.status === 'N/A') N/A
+                        option(value="available" selected = products.availability === "available") Available
+                        option(value="booked" selected = products.status === 'booked') Booked
+                        option(value="N/A" selected = products.status === 'N/A') N/A
        
             .form-field
                 input.btn.register-btn(type='submit' value='Register')

@@ -6,7 +6,6 @@ const connectEnsureLogin = require("connect-ensure-login");
 // Importing Model
 const Registration = require("../model/User");
 
-
 // image upload
 var storage = multer.diskStorage({
 	destination: (req, file, cb) => {
@@ -28,12 +27,6 @@ router.get("/producelist", async (req, res) => {
 	res.render("producelist", { products: urbanFarmerList });
 });
 
-// router.get("/uploadproduce", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
-// 	// console.log("This is the Current User ", req.session.user);
-// 	res.render("produce", { currentUser: req.session });
-// });
-
-
 router.get("/produceupload", async (req, res) => {
 	let urbanFarmerList = await Registration.find({ role: "UrbanFarmer" });
 	res.render("produceUpload", { urbanfarmers: urbanFarmerList });
@@ -53,15 +46,6 @@ router.post("/produceupload", upload.single("prodImage"), async (req, res) => {
 	}
 });
 
-// router.get("/producelist", async (req, res) => {
-// 	try {
-// 		let products = await UFProdUploads.find();
-// 		res.render("producelist", { products: products });
-// 	} catch (error) {
-// 		res.status(400).send("Unable to get Produce list");
-// 	}
-// });
-
 // Updating Produce
 router.get("/produce/update/:id", async (req, res) => {
 	try {
@@ -80,19 +64,27 @@ router.post("/produce/update", async (req, res) => {
 		res.status(400).send("Unable to update produce");
 	}
 });
-// Dashboard Route
-router.get("/UFdashboard", (req, res) => {
-	res.render("dashboards/UF-dashboard");
+
+// Return approved list
+router.get("/approvedList", async (req, res) => {
+	try {
+		const prodOrder = { _id: -1 };
+		const approvedProducts = await UFProdUploads.find({ role: "UrbanFarmer" }).sort(prodOrder);
+		console.log("this is your product", approvedProducts);
+		res.render("approvedlist", { items: approvedProducts });
+	} catch (error) {
+		res.status(400).send("Unable to approve produce");
+	}
 });
 
 // approve
 router.get("/produce/approve/:id", async (req, res) => {
 	try {
-		const updateProduct = await UFProdUploads.findOne({ _id: req.params.id });
-		res.render("approve", { product: updateProduct });
-		console.log("Produce approved", updateProduct);
+		const productsApproved = await UFProdUploads.findOne({ _id: req.params.id });
+		res.render("approve", { products: productsApproved });
+		// console.log("approve", approveProduct);
 	} catch (error) {
-		res.status(400).send("Unable to get produce");
+		res.status(400).send("Unable to approve produce");
 	}
 });
 
@@ -109,8 +101,8 @@ router.post("/produce/approve", async (req, res) => {
 router.get("/produce/available/:id", async (req, res) => {
 	try {
 		const saleProduct = await UFProdUploads.findOne({ _id: req.params.id });
-		res.render("availability", { item: updateProduct });
-		console.log("Product approved", saleProduct);
+		res.render("availability", { products: saleProduct });
+		// console.log("Product approved", saleProduct);
 	} catch (error) {
 		res.status(400).send("Unable to approve produce");
 	}
@@ -121,7 +113,7 @@ router.post("/produce/available", async (req, res) => {
 		await UFProdUploads.findOneAndUpdate({ _id: req.query.id }, req.body);
 		res.redirect("/producelist");
 	} catch (error) {
-		res.status(400).send("Unable to update produce");
+		res.status(400).send("Unable to see availability of produce");
 	}
 });
 

@@ -17,15 +17,15 @@
 // 	}
 // 	return true;
 
-	// if (req.user.role == 'Agric Officer') {
-	//       res.redirect("/aoDashboard");
-	// } else if (req.user.role == 'Farmer One') {
-	//       res.redirect('/foDashboard');
-	// } else if (req.user.role == 'Urban Farmer') {
-	//       res.redirect('/ufDashboard');
-	// } else {
-	//   res.send('Sorry either your session has expired or you are not a registered user.')
-	// }
+// 	if (req.user.role == "AgricOfficer") {
+// 		res.redirect("/aoDashboard");
+// 	} else if (req.user.role == "FarmerOne") {
+// 		res.redirect("/foDashboard");
+// 	} else if (req.user.role == "UrbanFarmer") {
+// 		res.redirect("/ufDashboard");
+// 	} else {
+// 		res.send("Sorry either your session has expired or you are not a registered user.");
+// 	}
 // });
 
 // //    Logout route

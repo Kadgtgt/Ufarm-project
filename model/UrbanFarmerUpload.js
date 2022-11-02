@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
 	prodImage: {
 		type: String,
 	},
-	wardName: {
+	ward: {
 		type: String,
 		require: true
 	},

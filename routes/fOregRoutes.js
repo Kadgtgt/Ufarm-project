@@ -85,6 +85,18 @@ router.post("/farmerone/update", async (req, res) => {
 	}
 });
 
+// // Farmer One Dashboard Route                                                        Notice in effecting the login that the authentication routes file and this route work together and important is Line 13 that specifies the role as it is in the name attribute of the role field in the signup form
+// // In case two people can access, use || (or) in the if statement if (req.user.role == 'farmerone' || req.user.role == 'AgricOfficer');
+// router.get("/foDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
+// 	// // esures login to access farmer one area or dashboard
+// 	req.session.user = req.user;
+// 	if (req.user.role == "FarmerOne") {
+// 		res.render("foDashboard");
+// 	} else {
+// 		res.send("This page is only accessible by Farmer One");
+// 	}
+// });
+
 
 
 module.exports = router;

@@ -7,20 +7,21 @@ router.get("/login", (req, res) => {
 	// res.render("trial-login")
 });
 
-router.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
+router.post("/login", passport.authenticate("local", { failureRedirect: "/homepage" }), (req, res) => {
 	req.session.user = req.user;
 	const user = req.session.user;
 	console.log("This is the user", user.role);
-	if (user.role == "AgricOfficer") {
+	if (req.user.role == "AgricOfficer") {
 		res.redirect("/aoDashboard");
-	} else if (user.role == "FarmerOne") {
+	} else if (req.user.role == "FarmerOne") {
 		res.redirect("/foDashboard");
-	} else if (user.role == "UrbanFarmer") {
+	} else if (req.user.role == "UrbanFarmer") {
 		res.redirect("/ufDashboard");
 	} else {
 		res.send("you are not a registered user");
 	}
 });
+	
 
 //    Logout route
 router.post("/logout", (req, res) => {
