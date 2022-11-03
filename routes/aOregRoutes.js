@@ -47,7 +47,7 @@ const Registration = require("../model/User");
 router.post("/aor", async (req, res) => {
 	const register = new Registration(req.body);
 	console.log(req.body);
-	await Registration.register(register, req.body.uniqueNo, (err) => {
+	await Registration.register(register, req.body.password, (err) => {
 		if (err) {
 			res.status(400).render("aoRegistration");
 			console.log(err);

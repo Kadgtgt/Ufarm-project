@@ -32,12 +32,13 @@ main
       .col-md-6
         .card
           form.box(action="/login" name="Login" method="POST")
-            h1 Login
+            h1 Customer Login
             p.text-muted Please enter your login and password!
-            input#uniqueNo(type='text' name='uniqueNo' placeholder='uniqueNo')
+            input#fName(type='text' name='fName' placeholder='fName')
+            input#lName(type='text' name='lName' placeholder='lName')
 
             input#password(type='password' name='password' placeholder='Password')
-            button.btn.btn-primary(type='submit') Login
+            a.btn.btn-primary(href='/' type='submit') Login 
             //- input#frm-btn-ao(type='submit' value='LogIn')
 
             a.create.text-muted.btn(href='/signup') create account?

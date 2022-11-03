@@ -27,14 +27,16 @@ header
             a.btn(href='/html/help.html') Help
           li
             a.btn(href='/html/contact.html') Contacts
-      button.btn(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
-        span
-        |  MENU
-      #offcanvasNavbar.offcanvas.offcanvas-end.bg-dark(tabindex='-1' aria-labelledby='offcanvasNavbarLabel')
-        p.admin-login
-          | For only Admins.
-        a.btn-admin(href='') Login
-        a.btn-admin(href='/admins') DashBoards
+          li 
+            a.btn(href='/login') Login  
+      //- button.btn(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
+      //-   span
+      //-   |  LOGIN
+      //- #offcanvasNavbar.offcanvas.offcanvas-end.bg-dark(tabindex='-1' aria-labelledby='offcanvasNavbarLabel')
+      //-   p.admin-login
+      //-     | For only Admins.
+      //-   a.btn-admin(href='/login') Login
+      //-   a.btn-admin(href='/admins') DashBoards
 main
   .image-wrapper
     .intro

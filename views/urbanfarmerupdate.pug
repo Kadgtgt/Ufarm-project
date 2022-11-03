@@ -21,13 +21,6 @@ nav.navbar.navbar-expand-lg.bg-light.pb-4
                             each urbanfarmer in urbanfarmers
                                 option(value='')
                                 option(value='urbanfarmer._id')  #{urbanfarmer.fName+' '+urbanfarmer.lName}
-                //- .form-field
-                //-         label(for='') Urban Farmer Last Name:
-                //-         select(name='fName')
-                //-             if urbanfarmers.length
-                //-                 each urbanfarmer in urbanfarmers
-                //-                     option(value='')
-                //-                     option(value='urbanfarmer._id') #({urbanfarmer.lName'})
             .col
                 .form-field
                     label(for='')
@@ -36,7 +29,11 @@ nav.navbar.navbar-expand-lg.bg-light.pb-4
             .col
                 .form-field
                     label(for='') Phone number:
-                input(name='tel' type='text')   
+                input(name='tel' type='text') 
+            .col
+                .form-field
+                    label(for='') Activity:
+                input(name='activity' type='text')      
             .form-field
                 input.btn.register-btn(type='submit' value='Register')
 script(src='bootstrap-js/js/bootstrap.bundle.js')

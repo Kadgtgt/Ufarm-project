@@ -7,7 +7,7 @@ router.get("/login", (req, res) => {
 	// res.render("trial-login")
 });
 
-router.post("/login", passport.authenticate("local", { failureRedirect: "/homepage" }), (req, res) => {
+router.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
 	req.session.user = req.user;
 	const user = req.session.user;
 	console.log("This is the user", user.role);
@@ -21,7 +21,6 @@ router.post("/login", passport.authenticate("local", { failureRedirect: "/homepa
 		res.send("you are not a registered user");
 	}
 });
-	
 
 //    Logout route
 router.post("/logout", (req, res) => {
@@ -30,7 +29,7 @@ router.post("/logout", (req, res) => {
 			if (err) {
 				res.status(400).send("Unable to logout,Please check your Internet connection");
 			} else {
-				return res.redirect("/index");
+				return res.redirect("/");
 			}
 		});
 	}
@@ -38,6 +37,10 @@ router.post("/logout", (req, res) => {
 
 router.get("/signup", (req, res) => {
 	res.render("signup");
+});
+
+router.get("/login2", (req, res) => {
+	res.render("login2");
 });
 
 module.exports = router;

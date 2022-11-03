@@ -71,7 +71,7 @@ const registrationSchema = new mongoose.Schema({
 	},
 });
 registrationSchema.plugin(passportLocalMongoose, {
-	usernameField: "uniqueNo"
+	usernameField: "uniqueNo",
 });
 
 module.exports = mongoose.model("Registration", registrationSchema);
