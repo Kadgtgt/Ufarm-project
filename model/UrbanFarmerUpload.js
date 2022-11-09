@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const passportLocalMongoose = require("passport-local-mongoose");
 
 const userSchema = new mongoose.Schema({
 	supplierName: {
@@ -8,12 +7,12 @@ const userSchema = new mongoose.Schema({
 	},
 	SupplierId: {
 		type: String,
-		require: true
+		require: true,
 	},
 
 	uniqueNo: {
 		type: String,
-		require: true
+		require: true,
 	},
 
 	regDate: {
@@ -33,7 +32,7 @@ const userSchema = new mongoose.Schema({
 	},
 	ward: {
 		type: String,
-		require: true
+		require: true,
 	},
 	prodType: {
 		type: String,

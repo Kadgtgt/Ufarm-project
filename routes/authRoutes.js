@@ -9,8 +9,8 @@ router.get("/login", (req, res) => {
 
 router.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
 	req.session.user = req.user;
-	const user = req.session.user;
-	console.log("This is the user", user.role);
+	console.log("This is the user", req.session.user);
+	console.log(req.body);
 	if (req.user.role == "AgricOfficer") {
 		res.redirect("/aoDashboard");
 	} else if (req.user.role == "FarmerOne") {
@@ -18,7 +18,7 @@ router.post("/login", passport.authenticate("local", { failureRedirect: "/login"
 	} else if (req.user.role == "UrbanFarmer") {
 		res.redirect("/ufDashboard");
 	} else {
-		res.send("you are not a registered user");
+		res.send("you are not a registered user.");
 	}
 });
 
@@ -29,7 +29,7 @@ router.post("/logout", (req, res) => {
 			if (err) {
 				res.status(400).send("Unable to logout,Please check your Internet connection");
 			} else {
-				return res.redirect("/");
+				return res.redirect("/login");
 			}
 		});
 	}
@@ -37,10 +37,6 @@ router.post("/logout", (req, res) => {
 
 router.get("/signup", (req, res) => {
 	res.render("signup");
-});
-
-router.get("/login2", (req, res) => {
-	res.render("login2");
 });
 
 module.exports = router;

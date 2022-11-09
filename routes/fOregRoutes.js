@@ -16,7 +16,7 @@ router.post("/for", async (req, res) => {
 			res.status(400).render("forRegistration");
 			console.log(err);
 		} else {
-			res.redirect("/login");
+			res.redirect("/folist");
 		}
 	});
 });

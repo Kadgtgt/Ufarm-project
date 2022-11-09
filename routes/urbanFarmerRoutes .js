@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const connectEnsureLogin = require("connect-ensure-login");
+// const connectEnsureLogin = require("connect-ensure-login");
 
 // Importing Model
 const Registration = require("../model/User");
@@ -101,10 +101,10 @@ router.post("/produce/approve", async (req, res) => {
 router.get("/produce/available/:id", async (req, res) => {
 	try {
 		const saleProduct = await UFProdUploads.findOne({ _id: req.params.id });
-		res.render("availability", { products: saleProduct });
+		res.render("availability", { item: saleProduct });
 		// console.log("Product approved", saleProduct);
 	} catch (error) {
-		res.status(400).send("Unable to approve produce");
+		res.status(400).send("unable to show produce Availability");
 	}
 });
 

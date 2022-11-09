@@ -11,17 +11,9 @@ head
 header.header
   // place navbar here
   a(href='') AO DashBoard
-  .logout
-    a.btn.btn-primary(href='/homepage') Logout
+  form(method="POST" action="/logout")
+    button.btn.btn-primary(type='submit') Logout
 main
-  aside
-    ul
-      li
-        a(href='') Data Dashboard
-      li
-        a(href='/for') Register Farmer One
-      li
-        a(href='/folist') Farmer One List
   .container-fluid
     .row.row-cols-2.row-cols-md-8
       .col
@@ -30,20 +22,18 @@ main
             .d-flex.align-items-center
               div
                 p.mb-0.text-secondary Farmers Ones Registered
+                  a.btn.btn-primary(href='/folist' style='margin-left: 100px;') Click
       .col
         .card
           .card-body
             .d-flex.align-items-center
               div
-                p.mb-0.text-secondary New Farmer Ones
+                p.mb-0.text-secondary Register New Farmer Ones
+                  a.btn.btn-primary(href='/for' style='margin-left: 100px;') Click
       .col
         .card
           .card-body
             .d-flex.align-items-center
               div
-                p.mb-0.text-secondary Sales this Month
-      .col
-        .card
-          .card-body
-            div
-              p.mb-0.text-secondary Quantity of Products
+                p.mb-0.text-secondary Sales Report
+                  a.btn.btn-primary(href='/reports' style='margin-left: 100px;') Click

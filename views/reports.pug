@@ -46,12 +46,12 @@ block content
                             select.form-control(type="text" name='searchProduce')
                                 option(value="") (Select produce)
                                 option(value="Eggs") Eggs
-                                option(value="Heifer") Heifer
-                                option(value="Bull") Bull
-                                option(value="Flowers") Flowers
-                                option(value="Hens") Hens
-                                option(value="Cocks") Cocks
-                                option(value="Pepper") Pepper
+                                option(value="Cassava") Cassava
+                                //- option(value="Bull") Bull
+                                //- option(value="Flowers") Flowers
+                                //- option(value="Hens") Hens
+                                //- option(value="Cocks") Cocks
+                                //- option(value="Pepper") Pepper
                         div.col-md-4
                             input.btn.btn-primary.btn-block(type="submit")
                 br
@@ -65,9 +65,9 @@ block content
                     if products.length
                         each product in products
                             tr
-                                td #{product.prodname}
-                                td #{new Intl.NumberFormat().format(product.quantity)}
-                                td #{new Intl.NumberFormat().format(product.unitprice)}
+                                td #{product.prodName}
+                                td #{new Intl.NumberFormat().format(product.prodQuantity)}
+                                td #{new Intl.NumberFormat().format(product.price)}
                         tr
                             th Totals
                             td #{new Intl.NumberFormat().format(totalC.totalQuantity)}
@@ -76,4 +76,4 @@ block content
                     else
                         p That produce has no revenue captured :( 
 block footer
-    div.col-md-12 © 2022 Refactory Cohort 12, NodeJS by Irene.
+    div.col-md-12 © MASAJJA URBAN FARM.

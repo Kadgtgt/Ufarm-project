@@ -24,7 +24,7 @@ const registrationRoutes = require("./routes/registrationRoutes");
 const authRoutes = require("./routes/authRoutes");
 const dashboardsRoutes = require("./routes/dashboardsRoutes");
 const urbanFarmerRoutes = require("./routes/urbanFarmerRoutes ");
-// const reportsRoutes = require("./routes/reportsRoutes");
+const reportsRoutes = require("./routes/reportsRoutes");
 
 // INSTANTIATIONS
 const app = express();
@@ -69,7 +69,7 @@ app.use("/", registrationRoutes);
 app.use("/", authRoutes);
 app.use("/", dashboardsRoutes);
 app.use("/", urbanFarmerRoutes);
-// app.use("/", reportsRoutes);
+app.use("/", reportsRoutes);
 
 //Always the second last line in the Express server
 app.get("*", (req, res) => {

@@ -9,18 +9,10 @@ head
   link(rel='stylesheet' href='/css/style.css')
 header.header
   // place navbar here
-  a(href='') FO DashBoard
-  .logout
-    a.btn.btn-primary(href='/homepage') Logout
-main
-  aside
-    ul
-      li
-        a(href='/report') Data Dashboard
-      li
-        a(href='/ufr') UF Registrations
-      li
-        a(href='/uflist') UF List  
+  h1 FO DashBoard
+  form(action='/logout' method='Post')
+    button.btn.btn-primary(type='submit' ) Logout
+main 
   .container-fluid
     .row.row-cols-2.row-cols-md-8
       .col
@@ -28,22 +20,20 @@ main
           .card-body
             .d-flex.align-items-center
               div
-                p.mb-0.text-secondary Farmers Ones Registered
+                p.mb-0.text-secondary Urban Farmers Registered
+                  a.btn.btn-primary(href='/uflist' style='margin-left: 100px;') Click 
       .col
         .card
           .card-body
             .d-flex.align-items-center
               div
-                p.mb-0.text-secondary New Farmer Ones
+                p.mb-0.text-secondary Register New Urban Farmers
+                  a.btn.btn-primary(href='/ufr' style='margin-left: 75px;') Click 
       .col
         .card
           .card-body
             .d-flex.align-items-center
               div
-                p.mb-0.text-secondary Sales this Month
-      .col
-        .card
-          .card-body
-            div
-              p.mb-0.text-secondary Quantity of Products
+                p.mb-0.text-secondary Approve Products
+                  a.btn.btn-primary(href='producelist' style='margin-left: 75px;') Click
 footer

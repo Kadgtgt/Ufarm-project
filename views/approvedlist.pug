@@ -85,6 +85,7 @@ block content
                 th Quantity
                 th Mode of Delivery 
                 th Price
+                th Status
                 th Mode of Payment
                 th Image 
                 th Change Availability 
@@ -98,6 +99,7 @@ block content
                             td #{item.prodQuantity}
                             td #{item.deliveryMode}
                             td #{item.price}
+                            td #{item.status}
                             td #{item.paymentMode}
                             td 
                                 img(src="/"+item.prodImage, alt="Image" width='150px' height="150px")
@@ -112,5 +114,5 @@ block content
                                     button.btn.btn-danger.btn-block.delete(type="submit") Delete
     div.form-row
         div.col.form-group
-            a(class="button" href="/") Back
+            a(class="button" href="/ufDashboard") Back
 

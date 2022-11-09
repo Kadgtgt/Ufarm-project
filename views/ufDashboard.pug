@@ -9,18 +9,10 @@ head
   link(rel='stylesheet' href='/css/style.css')
 header.header
   // place navbar here
-  a(href='') UF DashBoard
-  .logout
-    a.btn.btn-primary(href='/homepage') Logout
+  a(href='') UF DashBoard 
+  form(method="POST" action="/logout")
+    button.btn.btn-primary(type='submit') Logout
 main
-  aside
-    ul
-      li
-        a(href='/produceupload') Upload Produce
-      li
-        a(href='/producelist') Product List
-      li
-        a(href='/productspage') Products
   .container-fluid
     .row.row-cols-2.row-cols-md-8
       .col
@@ -28,22 +20,12 @@ main
           .card-body
             .d-flex.align-items-center
               div
-                p.mb-0.text-secondary Farmers Ones Registered
+                p.mb-0.text-secondary Upload Products
+                  a.btn.btn-primary(href='/produceupload' style='margin-left: 140px;') Click 
       .col
         .card
           .card-body
             .d-flex.align-items-center
               div
-                p.mb-0.text-secondary New Farmer Ones
-      .col
-        .card
-          .card-body
-            .d-flex.align-items-center
-              div
-                p.mb-0.text-secondary Sales this Month
-      .col
-        .card
-          .card-body
-            div
-              p.mb-0.text-secondary Quantity of Products
-footer
+                p.mb-0.text-secondary Approved Products
+                  a.btn.btn-primary(href='/approvedlist' style='margin-left: 140px;') Click

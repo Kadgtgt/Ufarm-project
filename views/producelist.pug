@@ -19,6 +19,7 @@ block content
                 th Quantity 
                 th Mode of Delivery 
                 th Mode of Payment 
+                th Availability
                 th Image
                 th Update
                 th Change Status
@@ -36,6 +37,7 @@ block content
                             td #{product.prodQuantity}
                             td #{product.deliveryMode}
                             td #{product.paymentMode}
+                            td #{product.availability}
                             td 
                                 img(src="/"+product.prodImage, alt="Image" width='150px' height="150px")
                             //- td #{moment(us
@@ -49,6 +51,6 @@ block content
                                     button.btn.btn-danger.btn-block(type="submit") Delete
     div.form-row
         div.col.form-group
-            a(class='button' href='/aoDashboard') Back
+            a(class='button' href='/foDashboard') Back
 
 block footer
