@@ -15,10 +15,11 @@ block content
                 th Last Name
                 th UniqueNO
                 th Phone Number
+                th Ward
                 th Residence Type 
                 th NIN Number
                 th Update
-                th Delete
+                th Appoint
         tbody
             if farmerones.length
                 each farmerone in farmerones
@@ -27,15 +28,14 @@ block content
                         td #{farmerone.lName}
                         td #{farmerone.uniqueNo}
                         td #{farmerone.tel}
+                        td #{farmerone.ward}
                         td #{farmerone.residence}
-                        td #{farmerone.ninNO}
+                        td #{farmerone.ninNo}
                         //- td #{moment(us
                         td
                             a.btn.btn-danger.btn-block(href='/farmerOne/update/'+farmerone._id) Update
-                        td
-                             form(method="post" action='/farmerOne/delete')
-                                input(type="hidden" placeholder="" name="id", value=farmerone._id)
-                                button.btn.btn-danger.btn-block(type="submit") Delete
+                        td 
+                            a.btn.btn-danger.btn-block(href='/farmerOne/appoint/'+farmerone._id) Appoint   
     div.form-row
         div.col.form-group
             a(class='button' href='/aoDashboard') Back

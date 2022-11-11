@@ -19,24 +19,29 @@ main
           .row.justify-content-center.align-items-center.g-2.lamar
             .col-lg-3.form-zones
               label First Name:
-              input.form-inputs(name='fName' type='text')
-
+              input#fName.form-inputs(name='fName' type='text')
+              small#fNameerr
+              
             .col-lg-3.form-zones
               label Last Name:
-              input.form-inputs(name='lName' type='text')
+              input#lName.form-inputs(name='lName' type='text')
+              small#lNameerr
 
             .col-lg-3.form-zones
               label Date of Registration:
-              input.form-inputs(name='dor' type='date')
+              input#dor.form-inputs(name='dor' type='date')
+              small#dorerr
 
             
             .col-lg-3.form-zones
               label Unique Number:
-              input.form-inputs(name='uniqueNo' type='text')
+              input#uniqueNo.form-inputs(name='uniqueNo' type='text')
+              small#uniqueNoerr
 
             .col-lg-3.form-zones
               label Phone Number:
-              input.form-inputs(name='tel' type='text')   
+              input#tel.form-inputs(name='tel' type='text') 
+              small#telerr  
 
             .col-lg-3.form-zones
               label Division:
@@ -49,11 +54,13 @@ main
 
             .col-lg-3.form-zones 
               label Date of Birth: 
-              input.form-inputs(name='dob' type='date')
+              input#dob.form-inputs(name='dob' type='date')
+              small#doberr
 
             .col-lg-3.form-zones 
               label NIN Number: 
-              input.form-inputs(name='ninNo' type='text')
+              input#ninNo.form-inputs(name='ninNo' type='text')
+              small#ninNoerr
 
             .col-lg-3.form-zones
               label Role: 
@@ -61,6 +68,7 @@ main
               select.input(name='role')
                 option(value='0')
                 option(value='AgricOfficer') AgricOfficer
+                small#roleerr
             
             .col-lg-3.form-zones
               label Gender:
@@ -69,10 +77,13 @@ main
                 span Male
                 input#gender2(type='radio' name='gender' autocomplete='off' value='female')
                 span Female
+                small#gendererr
 
             .col-lg-3.form-z0nes 
               label Password: 
-              input.form-inputs(name='password' type='password')
+              input#password.form-inputs(name='password' type='password')
+              small#passworderr
+
               
             .col-lg-6
               button.btn.btn-primary(type='submit') Register

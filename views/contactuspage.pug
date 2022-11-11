@@ -1,0 +1,57 @@
+doctype html
+head
+  title Title
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS v5.2.1
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/contact.css')
+header
+  .row
+    .col
+      nav.navbar.navbar-light.bg-light.fixed-top
+        .container-fluid
+          img.image(src='./Images/fav.jpg')
+          h1.title Masajja Urban Farm
+          .my-list
+            ul
+              li
+                a.btn(href='/homepage') Home
+              li
+                a.btn(href='/productspage') Products
+              li
+                a.btn(href='/aboutpage') About Us
+main
+  .row
+    .col
+      .container.d-flex.align-items-center.justify-content-center.position-relative.flex-wrap
+        .card.d-flex.position-relative.flex-column
+          .imgContainer
+            img(src='./Images/phone.jpg')
+          .content
+            h2 CONTACT US
+            p
+              |You are welcome to contact us if you have a suggestion or simply want to chat about organic food. We love feedback of any kind. We are open to new ideas and eagerly waiting for your message.
+.container.contact-form
+    form(method='post' action='')
+        h3 Drop Us a Message
+        .row
+            .col-md-6
+                .form-group
+                 input.form-control(type='text' name='txtName' placeholder='Your Name *' value='')
+                .form-group
+                 input.form-control(type='text' name='txtEmail' placeholder='Your Email *' value='')
+                .form-group
+                 input.form-control(type='text' name='txtPhone' placeholder='Your Phone Number *' value='')
+                .form-group
+                 input.btnContact(type='submit' name='btnSubmit' value='Send Message')
+            .col-md-6
+                .form-group
+                 textarea.form-control(name='txtMsg' placeholder='Your Message *' style='width: 100%; height: 150px;')
+
+footer
+  // place footer here
+// Bootstrap JavaScript Libraries
+script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js' integrity='sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js' integrity='sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz' crossorigin='anonymous')

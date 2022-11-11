@@ -13,7 +13,7 @@ header
   // place navbar here
   nav.navbar.navbar-light.bg-light.fixed-top.my-4
     .container-fluid
-      img.image(src='/Images/fav.jpg')
+      img.image(src='../Images/fav.jpg')
       h1.title Masajja Urban Farm
       .my-list
         ul
@@ -22,21 +22,11 @@ header
           li
             a.btn(href='/productspage') Products
           li
-            a.btn(href='#') About Us
+            a.btn(href='/aboutpage') About Us
           li
-            a.btn(href='#') Help
-          li
-            a.btn(href='#') Contacts 
+            a.btn(href='/contactpage') Contacts 
           li 
-            a.btn(href='/login') Login  
-      //- button.btn(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar')
-      //-   span
-      //-   |  LOGIN
-      //- #offcanvasNavbar.offcanvas.offcanvas-end.bg-dark(tabindex='-1' aria-labelledby='offcanvasNavbarLabel')
-      //-   p.admin-login
-      //-     | For only Admins.
-      //-   a.btn-admin(href='/login') Login
-      //-   a.btn-admin(href='/admins') DashBoards 
+            a.btn(href='/login') Login   
 main
   .image-wrapper
     .intro
@@ -78,28 +68,6 @@ main
               a.btn.mr-2(href='') Horticulture
               a.btn.mr-2(href='') Poultry
               a.btn.mr-2(href='') Diary
-  // Button to Open the Modal
-  button.btn.btn-contact(type='button' style='margin-top: 15px' data-bs-toggle='modal' data-bs-target='#myModal')
-    | Contact Us
-  // The Modal
-  #myModal.modal
-    .modal-dialog
-      .modal-content
-        // Modal Header
-        .modal-header
-          h4.modal-title AGENT
-          button.btn.btn-close(type='button' data-bs-dismiss='modal')
-        // Modal body
-        .modal-body
-          | You can reach us through our agent 
-          br
-          |  Kalyango Junior 
-          br
-          a.btn(href='' style='margin-top: 13px') +256782323279
-        // Modal footer
-        .modal-footer
-          button.btn.btn-danger(type='button' data-bs-dismiss='modal') Close
 footer#sticky-footer.flex-shrink-0.py-4.bg-dark.text-white-50
   .container.text-center
     small Copyright &copy; Masajja Urban Farm
-// Bootstrap JavaScript Libraries

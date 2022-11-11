@@ -16,7 +16,7 @@ router.post("/ufr", async (req, res) => {
 			res.status(400).render("ufRegistration");
 			console.log(err);
 		} else {
-			res.redirect("/login");
+			res.redirect("/uflist");
 		}
 	});
 });

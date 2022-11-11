@@ -1,0 +1,89 @@
+doctype html
+head
+  title Title
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS v5.2.1
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
+  link(rel='icon' href='/Images/fav.jpg')
+  link(rel='stylesheet' href='/css/forms.css')
+header
+  // place navbar here
+main
+  .container
+    h1 Agricultural Officer SignUp
+    .row.justify-content-center.align-items-center.g-2
+      .col-lg-6.bg-dark.text-white.my-5
+        form(action='/ao' method='post' name='registration' onsubmit="return Validate();" )
+          .row.justify-content-center.align-items-center.g-2
+            .col-lg-3
+              label(for='fName') First Name
+              input#fName.input(type='text' name='fName' autofocus='')
+              small#fNameerr  
+
+            .col-lg-3
+              label Last Name:
+              input#lName.input(type='text' name='lName' autofocus='')
+              small#lNameerr  
+
+            .col-lg-3
+              label(for='uniqueNo') Unique Number
+              input#uniqueNo.input(type='text' name='uniqueNo' autofocus='')
+              small#uniqueNoerr 
+
+            .col-md-3
+              label(for='tel') Phone Number
+              input#tel.input(type='text' name='tel' autofocus='')
+              small#phoneNoerr 
+
+            .col-lg-3
+              label(for='email') Email Address
+              input#email.input(type='text' name='email' autofocus='')
+              small#emailerr 
+
+            .col-lg-3
+              label(for='role') Role
+              select#select.input(name='role')
+                option(value='') select role
+                option(value='AgricOfficer') AgricOfficer
+                small#roleerr   
+            
+            .col-lg-3
+              label(for='dor') Date of Registration:
+              input#regex_date.input(type='date' name='dor')
+            small#dorerr  
+
+            .col-lg-3 
+              label Division: 
+              select#select.input(name='division')
+                option(value='') select division
+                option(value='Makindye') Makindye
+                option(value='Nakawa') Nakawa
+                option(value='Rubaga') Rubaga
+                option(value='Nansana') Nansana
+            
+            .col-lg-3
+              label(for='password') Password
+              br
+              input#password.input(type='password' name='password')
+              br
+              small#passworderr  
+
+            .col-lg-3
+              label(for='gender') Gender:
+              .radio
+                input#gender1(type='radio' name='gender' autocomplete='off' value='male' checked='')
+                span Male
+                input#gender2(type='radio' name='gender' autocomplete='off' value='female')
+                span Female
+                small#gendererr
+                br
+
+              label
+
+          .col-lg-6
+            button.btn.btn-primary(type='submit') Sign up
+footer
+  // place footer here
+// Bootstrap JavaScript Libraries

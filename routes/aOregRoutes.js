@@ -5,7 +5,6 @@ router.get("/aor", (req, res) => {
 	res.render("aoRegistration");
 });
 
-
 // importing model
 const Registration = require("../model/User");
 
@@ -38,11 +37,19 @@ router.get("/productspage", (req, res) => {
 	res.render("productspage");
 });
 
+router.get("/aboutpage", (req, res) => {
+	res.render("aboutpage");
+});
+
+router.get("/contactpage", (req, res) => {
+	res.render("contactuspage");
+});
+
 // router.get("/reports", connectEnsureLogin.ensureLoggedIn(), async(req, res) => {
 //     req.session.user = req.user;
 //     if(req.user.role == 'AgricOfficer'){
 //         try {
-            
+
 //             // New
 //             // instantiate a crop variable you will use to select a crop.
 //             let selectedProduce;
@@ -54,16 +61,15 @@ router.get("/productspage", (req, res) => {
 //             // console.log("products from the db", goods)
 //             console.log("products from the db after search", items)
 
-
 //             // New
 //             let totalCrop = await Produce.aggregate([
 //                 { $match: { prodname: selectedProduce } },
-//                 { $group: { _id: "$prodname", 
+//                 { $group: { _id: "$prodname",
 //                 totalQuantity: { $sum: "$quantity" },
 //                 totalCost: { $sum: { $multiply: [ "$unitprice", "$quantity" ] } },
 // 				console.log("Crop collections", totalCrop),
-// 				res.render("reports", { 
-// 				title: 'Reports', 
+// 				res.render("reports", {
+// 				title: 'Reports',
 // 				products:items,
 // 				totalC:totalCrop[0]});
 // 			} catch (error) {

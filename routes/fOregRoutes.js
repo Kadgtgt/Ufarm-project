@@ -64,6 +64,25 @@ router.post("/farmerone/update", async (req, res) => {
 	}
 });
 
+// appointing farmer one ward
+router.get("/farmerone/appoint/:id", async (req, res) => {
+	try {
+		const appointFarmerOne = await Registration.findOne({ _id: req.params.id });
+		res.render("appointFarmerOne", { farmerones: appointFarmerOne });
+	} catch (error) {
+		res.status(400).send("Unable to appoint farmerone to any ward");
+	}
+});
+
+router.post("/farmerone/appoint", async (req, res) => {
+	try {
+		await Registration.findOneAndUpdate({ _id: req.query.id }, req.body);
+		res.redirect("/folist");
+	} catch (error) {
+		res.status(400).send("Unable to update produce");
+	}
+});
+
 // // Farmer One Dashboard Route                                                        Notice in effecting the login that the authentication routes file and this route work together and important is Line 13 that specifies the role as it is in the name attribute of the role field in the signup form
 // // In case two people can access, use || (or) in the if statement if (req.user.role == 'farmerone' || req.user.role == 'AgricOfficer');
 // router.get("/foDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {

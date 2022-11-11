@@ -36,7 +36,7 @@ body {
 }
 
 .image {
-	width: 5pc;
+	width: 3pc;
 }
 
 .btn {
@@ -176,5 +176,5 @@ span {
 }
 
 footer{
-	margin-top: 20px;
+	margin-top: 80px;
 }

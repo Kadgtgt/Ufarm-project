@@ -52,6 +52,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/public/uploads", express.static(__dirname + "/public/uploads"));
+app.use("/public/css", express.static(__dirname + "/public/css"));
 app.use(expressSession);
 
 // passport configuration middleware

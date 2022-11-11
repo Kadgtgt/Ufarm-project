@@ -39,7 +39,7 @@ router.post("/produceupload", upload.single("prodImage"), async (req, res) => {
 		produce.prodImage = req.file.path;
 		console.log("This is my produce", produce);
 		await produce.save();
-		res.redirect("/producelist");
+		res.redirect("/ufDashboard");
 	} catch (error) {
 		res.status(400).send("Can't save produce");
 		console.log(error);
