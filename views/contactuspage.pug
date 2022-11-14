@@ -34,16 +34,18 @@ main
             p
               |You are welcome to contact us if you have a suggestion or simply want to chat about organic food. We love feedback of any kind. We are open to new ideas and eagerly waiting for your message.
 .container.contact-form
-    form(method='post' action='')
+    form(method='post' action='/message')
         h3 Drop Us a Message
         .row
             .col-md-6
                 .form-group
-                 input.form-control(type='text' name='txtName' placeholder='Your Name *' value='')
+                 input.form-control(type='text' name='fName' placeholder='First Name *' value='')
+                 .form-group
+                 input.form-control(type='text' name='lName' placeholder='Last Name *' value='')
                 .form-group
-                 input.form-control(type='text' name='txtEmail' placeholder='Your Email *' value='')
+                 input.form-control(type='text' name='email' placeholder='Your Email *' value='')
                 .form-group
-                 input.form-control(type='text' name='txtPhone' placeholder='Your Phone Number *' value='')
+                 input.form-control(type='text' name='tel' placeholder='Your Phone Number *' value='')
                 .form-group
                  input.btnContact(type='submit' name='btnSubmit' value='Send Message')
             .col-md-6

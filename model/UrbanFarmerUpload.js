@@ -9,6 +9,21 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		require: true,
 	},
+	
+	customeremail: {
+		type: String,
+		require: true,
+	},
+
+	customertel: {
+		type: String,
+		require: true,
+	},
+
+	customerdirection: {
+		type: String,
+		require: true,
+	},
 
 	uniqueNo: {
 		type: String,

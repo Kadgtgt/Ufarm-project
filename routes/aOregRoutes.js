@@ -21,6 +21,19 @@ router.post("/aor", async (req, res) => {
 	});
 });
 
+router.post("/message", async (req, res) => {
+	const textmessage = new Registration(req.body);
+	console.log(req.body);
+	await Registration.register(textmessage, req.body.txtMsg, (err) => {
+		if (err) {
+			res.status(400).render("landingpage");
+			console.log(err);
+		} else {
+			res.redirect("/contactpage");
+		}
+	});
+});
+
 router.get("/", (req, res) => {
 	res.render("landingpage");
 });
@@ -33,9 +46,9 @@ router.get("/admins", (req, res) => {
 	res.render("admins");
 });
 
-router.get("/productspage", (req, res) => {
-	res.render("productspage");
-});
+// router.get("/productspage", (req, res) => {
+// 	res.render("productspage");
+// });
 
 router.get("/aboutpage", (req, res) => {
 	res.render("aboutpage");

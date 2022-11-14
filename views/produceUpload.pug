@@ -61,9 +61,9 @@ main
               label Product type:
               .radio
                 | Organic
-                input(type='radio' name='prodType' checked='')
+                input(type='radio' name='prodType' value="Organic")
                 |             Non-Organic
-                input(type='radio' name='prodType')
+                input(type='radio' name='prodType' value="Non-Organic")
             .col-lg-3.form-zones
               label Quantity:
               input.form-inputs(name='prodQuantity' type='number' style='padding:0;')
@@ -76,6 +76,10 @@ main
             .col-sm-12.col-lg-2.form-zones
               label Price:(Ugx)
               input.form-inputs(type='number' name='price' placeholder='Ugx:')
+              //- customer hidden details
+              input.form-inputs(type='hidden' name='customeremail' placeholder='')
+              input.form-inputs(type='hidden' name='customertel' placeholder='')
+              input.form-inputs(type='hidden' name='customerdirection' placeholder='')
             .col-lg-3.form-zones
               label Mode of Delivery:
               select#select.form-select(name='deliveryMode')

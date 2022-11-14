@@ -69,6 +69,10 @@ const registrationSchema = new mongoose.Schema({
 	division: {
 		type: String,
 	},
+
+	txtMsg: {
+		type: String,
+	},
 });
 registrationSchema.plugin(passportLocalMongoose, {
 	usernameField: "uniqueNo",

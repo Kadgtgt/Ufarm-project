@@ -1,83 +1,65 @@
 extends layout
 block content
-    //- style.
-    //-     .list{
-    //-     text-align:center;
-    //-     }
-    //-     .card-title{
-    //-     background: linear-gradient(to bottom,rgb(93, 88, 15),rgba(207, 232, 41, 0.58),rgb(74, 77, 26));
-    //-     color:black;
-    //-     border:24px solid rgb(0,0,0,0.67);
-    //-     padding:8px;
-    //-     font-weight:bolder;
-    //-     font-size:28px;
-    //-     border-radius:15px 30px 15px 30px;
-    //-     }
-    //-     nav{
-    //-     font-weight:bolder;
-    //-     text-align:center;
-    //-     }
-    //-     .nev{
-    //-     background: linear-gradient(to bottom,rgb(15, 93, 93),rgb(41, 232, 232),rgb(26, 77, 77));
-    //-     border-radius:15px 30px 15px 30px;
-    //-     width:20%;
-    //-     padding:8px;
-    //-     border:teal;
-    //-     color: rgb(11, 11, 11,0.87);
-    //-     font-weight:700;
-    //-     //-margin:auto;
-    //-     }
-    //-     .table{
-    //-     width:85%; 
-    //-     margin:auto;
-    //-     border:2px ridge grey; 
-    //-     padding:8px;
-    //-     }
-    //-     thead{
-    //-     font-weight:700;
-    //-     font-size:18px;  
-    //-     }
-    //-     tbody{
-    //-         font-weight:500;
-    //-         font-size:15px;
-    //-     }
-    //-     .form-group{
-    //-         transform:translateY(55px);
-    //-         margin-left:12px;
-    //-         padding:25px;
-    //-         position:absolute;
-    //-         left:0;
+    style.
+        .list{
+        text-align:center;
+        }
+        .card-title{
+        color:black;
+        padding:8px;
+        font-weight:bolder;
+        font-size:28px;
+        }
+        .table{
+        width:85%; 
+        margin:auto;
+        border:2px solid black; 
+        padding:8px;
+        }
+        thead{
+        font-weight:700;
+        font-size:18px;  
+        }
+        tbody{
+            font-weight:500;
+            font-size:15px;
+        }
+        .form-group{
+            transform:translateY(55px);
+            margin-left:12px;
+            padding:25px;
+            position:absolute;
+            left:0;
 
-    //-     }
-    //-     .btnz{
-    //-         background: linear-gradient(to bottom,rgb(61, 15, 93,0.87),rgb(177, 68, 245,0.68),rgb(69, 26, 77,0.86));
-    //-         padding-top:8px;
-    //-         padding-bottom:8px;
-    //-         font-weight:bolder;
-    //-         font-weight:700;
-    //-         color: rgb(11, 11, 11,0.87);
-    //-     }
-    //-     .delete{
-    //-         background: linear-gradient(to bottom,rgb(150, 21, 21),rgb(240, 84, 90),rgb(77, 26, 26));
-    //-         font-size:18px;
-    //-         font-weight:700;
-    //-         color: rgb(11, 11, 11,0.87);
-    //-     }
-    //-     .availability{
-    //-         background: linear-gradient(to bottom,rgb(21, 150, 64),rgb(180, 240, 84),rgb(26, 77, 29));	
-    //-         color:rgb(25, 90, 90);
-    //-         font-size:18px;
-    //-         font-weight:700;
-    //-         }
+        }
+        .btn{
+            padding-top:8px;
+            padding-bottom:8px;
+            font-weight:bolder;
+            font-weight:700;
+            color: taupe;
+        }
+        .btnz{
+            border: 3px solid red;
+            border-radius: 5px;
+            margin-left: 150px;
+            font-weight:bolder;
+            font-weight:700;
+            color:black; 
+        }
+        .delete{
+            font-size:18px;
+            font-weight:700;
+            color: rgb(11, 11, 11,0.87);
+        }
+        .availability{	
+            color:rgb(25, 90, 90);
+            font-size:18px;
+            font-weight:700;
+        }
         
     header.card-header.list
         h4.card-title Approved Products List 
-        br
-        nav
-            #nav-tab.nav.nav-tabs(role='tablist')
-            a#nav-profile-tab.nav-item.nav-link.nev(href='/') 
-            #nav-tabContent.tab-content
-    br
     table.table.table-bordered 
         thead
             tr
@@ -114,5 +96,5 @@ block content
                                     button.btn.btn-danger.btn-block.delete(type="submit") Delete
     div.form-row
         div.col.form-group
-            a(class="button" href="/ufDashboard") Back
+            a.btnz.btn-secondary(class="button" href="/productspage") Back
 

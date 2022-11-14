@@ -27,6 +27,12 @@ router.get("/producelist", async (req, res) => {
 	res.render("producelist", { products: urbanFarmerList });
 });
 
+router.get("/producepage", async (req, res) => {
+	const productsList = await UFProdUploads.find({ role: "UrbanFarmer" });
+	console.log(productsList);
+	res.render("productspage", { productsAvailable: productsList });
+});
+
 router.get("/produceupload", async (req, res) => {
 	let urbanFarmerList = await Registration.find({ role: "UrbanFarmer" });
 	res.render("produceUpload", { urbanfarmers: urbanFarmerList });
@@ -125,5 +131,6 @@ router.post("/produce/delete", async (req, res) => {
 		res.send(400).send("Sorry we were unable to delete product");
 	}
 });
+
 
 module.exports = router;
