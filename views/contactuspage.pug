@@ -19,7 +19,7 @@ header
               li
                 a.btn(href='/homepage') Home
               li
-                a.btn(href='/productspage') Products
+                a.btn(href='/producepage') Products
               li
                 a.btn(href='/aboutpage') About Us
 main
@@ -46,11 +46,12 @@ main
                  input.form-control(type='text' name='email' placeholder='Your Email *' value='')
                 .form-group
                  input.form-control(type='text' name='tel' placeholder='Your Phone Number *' value='')
-                .form-group
-                 input.btnContact(type='submit' name='btnSubmit' value='Send Message')
             .col-md-6
                 .form-group
                  textarea.form-control(name='txtMsg' placeholder='Your Message *' style='width: 100%; height: 150px;')
+            .col-md-6 
+                .form-group
+                 input.btnContact(type='submit')
 
 footer
   // place footer here

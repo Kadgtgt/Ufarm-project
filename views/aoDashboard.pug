@@ -10,7 +10,8 @@ head
   link(rel='stylesheet' href='/css/style.css')
 header.header
   // place navbar here
-  a(href='') AO DashBoard
+  a(href='') AO DashBoard 
+  span.text-white #{currentUser.fName}
   form(method="POST" action="/logout")
     button.btn.btn-primary(type='submit') Logout
 main

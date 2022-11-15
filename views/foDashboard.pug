@@ -10,7 +10,8 @@ head
 header.header
   // place navbar here
   h1 FO DashBoard
-  form(action='/logout' method='Post')
+  span.text-white #{currentUser.fName}
+  form(method='Post' action='/logout')
     button.btn.btn-primary(type='submit' ) Logout
 main 
   .container-fluid
@@ -36,4 +37,10 @@ main
               div
                 p.mb-0.text-secondary Approve Products
                   a.btn.btn-primary(href='producelist' style='margin-left: 75px;') Click
-footer
+      .col
+        .card
+          .card-body
+            .d-flex.align-items-center
+              div
+                p.mb-0.text-secondary Products Ordered
+                  a.btn.btn-primary(href='/orderlist' style='margin-left: 75px;') Click 

@@ -6,7 +6,7 @@
 body {
 	background-position: center;
 	background-size: auto;
-	background-color: #d08856;
+	background-color: thistle;
 	/* height: 150vh; */
 	background-repeat: no-repeat;
 	overflow-x: hidden;
@@ -122,9 +122,8 @@ body {
 	background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7)), url(../Images/farmer.jpg);
 }
 
-#category{
+#category {
 	background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7)), url(../Images/cat.jpg);
-
 }
 
 span {
@@ -175,6 +174,65 @@ span {
 	margin-top: 370px;
 }
 
-footer{
-	margin-top: 80px;
+.image-wrapper2 {
+	background: linear-gradient(rgb(0, 0, 0, 0.7) 50%, rgb(0, 0, 0, 0.7) 50%),
+		url(../Images/cow.jpg);
+	/* background-position: center; */
+	margin-top: 100px;
+}
+
+.container .card1 {
+	width: 1000px;
+	height: 700px;
+	margin: 100px 10px;
+	padding: 20px 15px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+	transition: 0.3s ease-in-out;
+	background-color: white;
+}
+
+.container .card1 {
+	/* background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7)), url(../Images/cow.jpg); */
+	/* height: 500px; */
+}
+.container .card1 .imgContainer1 {
+	position: relative;
+	width: 300px;
+	height: 200px;
+	top: -70px;
+	left: 10px;
+	z-index: 1;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.container .card1 .imgContainer1 img {
+	max-width: 100%;
+	border-radius: 4px;
+}
+.container .card1 .content1 {
+	position: relative;
+	margin-top: 100px;
+	padding: 10px 15px;
+	text-align: center;
+	color: black;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s ease-in-out;
+}
+.container .card1 .content1 {
+	visibility: visible;
+	opacity: 20;
+	/* margin-top: -40px; */
+	/* transition-delay: 0.3s; */
+}
+
+@media (max-width: 330px) {
+	.container .card .imgContainer {
+		left: -2px;
+	}
+}
+
+footer {
+	margin-top: 100px;
+	/* position: fixed; */
 }

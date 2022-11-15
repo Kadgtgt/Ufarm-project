@@ -20,7 +20,7 @@ const connectEnsureLogin = require("connect-ensure-login");
 router.get("/aoDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
 	req.session.user = req.user;
 	if (req.user.role == "AgricOfficer") {
-		res.render("aoDashboard");
+		res.render("aoDashboard", {currentUser:req.session.user});
 	} else {
 		res.send("this page is only accessed by the Agric Officer");
 	}
@@ -30,7 +30,7 @@ router.get("/aoDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
 router.get("/ufDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
 	req.session.user = req.user;
 	if (req.user.role == "UrbanFarmer") {
-		res.render("ufDashboard");
+		res.render("ufDashboard", {currentUser:req.session.user});
 	} else {
 		res.send("this page is only accessed by  Urban Farmer");
 	}
@@ -39,7 +39,7 @@ router.get("/ufDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
 router.get("/foDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
 	req.session.user = req.body;
 	if (req.user.role == "FarmerOne") {
-		res.render("foDashboard");
+		res.render("foDashboard", {currentUser:req.session.user});
 	} else {
 		res.send("only accessed by farmer one");
 	}

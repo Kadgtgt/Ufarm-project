@@ -38,24 +38,14 @@ block content
             font-weight:bolder;
             font-weight:700;
             color: taupe;
-            //- text-decoration: none;
         }
-        .btn2{
+        .btnz{
             border: 3px solid red;
             border-radius: 5px;
-            
+            margin-left: 150px;
             font-weight:bolder;
             font-weight:700;
             color:black; 
-            padding:8px;
-            //- text-decoration:none;
-        }
-        .button{
-            text-decoration: none;
-            border: 5px solid red;
-            color: taupe;
-            margin-left: 150px;
-            margin-top: 0px;
         }
         .delete{
             font-size:18px;
@@ -69,42 +59,50 @@ block content
         }
         
     header.card-header.list
-        h4.card-title Approved Products List 
+        h4.card-title Ordered Products List 
     table.table.table-bordered 
         thead
             tr
                 th Produce Name
                 th Quantity
-                th Mode of Delivery 
+                th Delivery Mode 
                 th Price
                 th Status
+                th Customer Email
+                th Customer Phone Number
+                th Customer Directions
+                th Availability
                 th Mode of Payment
                 th Image 
                 th Change Availability 
                 th Delete
         tbody
-            if items.length
-                each item in items
-                    if item.status == 'approved'
+            if orders.length
+                each order in orders
+                    if order.availability == 'booked'
                         tr
-                            td #{item.prodName}
-                            td #{item.prodQuantity}
-                            td #{item.deliveryMode}
-                            td #{item.price}
-                            td #{item.status}
-                            td #{item.paymentMode}
+                            td #{order.prodName}
+                            td #{order.prodQuantity}
+                            td #{order.deliveryMode}
+                            td #{order.price}
+                            td #{order.status}
+                            td #{order.customeremail}
+                            td #{order.customertel}
+                            td #{order.customerdirection}
+                            td #{order.availability}
+                            td #{order.paymentMode}
                             td 
-                                img(src="/"+item.prodImage, alt="Image" width='150px' height="150px")
+                                img(src="/"+order.prodImage, alt="Image" width='150px' height="150px")
                             //- td #{moment(us
                             td                            
-                                a.btn.btn-primary.btn-block.availability(href='/produce/available/'+item._id) Availability
+                                a.btn.btn-primary.btn-block.availability(href='/produce/available/'+order._id) Availability
 
 
                             td
                                 form(method="post" action='/produce/delete')
-                                    input(type="hidden" placeholder="" name="id", value=item._id)
+                                    input(type="hidden" placeholder="" name="id", value=order._id)
                                     button.btn.btn-danger.btn-block.delete(type="submit") Delete
     div.form-row
         div.col.form-group
-            a.btn.button(class="button" href="/producepage") Back
+            a.btnz.btn-secondary(class="button" href="/producepage") Back
 

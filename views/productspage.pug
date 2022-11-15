@@ -30,43 +30,44 @@ main
       // product
       .product-content.product-wrap.clearfix
         .row
-          if productsAvailable.length
-            each productAvailable in productsAvailable
-              if productAvailable.availability = "available"
-                .col-md-5.col-sm-12.col-xs-12
-                  .product-image
-                    img(src="/"+productAvailable.prodImage, alt="Image" width='150px' height="150px")
-                    span.tag2.hot
-                      | HOT
-                .col-md-7.col-sm-12.col-xs-12
-                  .product-deatil
-                    h5.name
-                      a(href='#')
-                        | #{productAvailable.prodName}
-                        //- span Organic
-                    p.price-container
-                      span UGX#{productAvailable.price}
-                    span.tag1
-                  .description
-                    p Proin in ullamcorper lorem. Maecenas eu ipsum 
-                  .product-info.smart-form
-                    .row
-                      .col-md-6.col-sm-6.col-xs-6
-                        a.btn.btn-success(href='/approvedlist') Order
-                        br
-                        // <a href="" class="btn btn-success">Order</a>
-                      .col-md-6.col-sm-6.col-xs-6
-                        .rating
-                          label(for='stars-rating-5')
-                            i.fa.fa-star
-                          label(for='stars-rating-4')
-                            i.fa.fa-star
-                          label(for='stars-rating-3')
-                            i.fa.fa-star.text-primary
-                          label(for='stars-rating-2')
-                            i.fa.fa-star.text-primary
-                          label(for='stars-rating-1')
-                            i.fa.fa-star.text-primary
+          .col.my-5(style='display:flex; flex-wrap:wrap;' )
+            if productsAvailable.length
+              each productAvailable in productsAvailable
+                if productAvailable.availability = "available" && productAvailable.status == "approved"
+                  .col-md-5.col-sm-12.col-xs-12
+                    .product-image
+                      img(src="/"+productAvailable.prodImage, alt="Image" width='150px' height="150px")
+                      span.tag2.hot
+                        | HOT
+                  .col-md-7.col-sm-12.col-xs-12
+                    .product-deatil
+                      h5.name
+                        a(href='#')
+                          | #{productAvailable.prodName}
+                          //- span Organic
+                      p.price-container
+                        span UGX#{productAvailable.price}
+                      span.tag1
+                    .description
+                      p Proin in ullamcorper lorem. Maecenas eu ipsum 
+                    .product-info.smart-form
+                      .row
+                        .col-md-6.col-sm-6.col-xs-6
+                          a.btn.btn-success(href='/produce/order/' +productAvailable._id) Order
+                          br
+                          // <a href="" class="btn btn-success">Order</a>
+                        .col-md-6.col-sm-6.col-xs-6
+                          .rating
+                            label(for='stars-rating-5')
+                              i.fa.fa-star
+                            label(for='stars-rating-4')
+                              i.fa.fa-star
+                            label(for='stars-rating-3')
+                              i.fa.fa-star.text-primary
+                            label(for='stars-rating-2')
+                              i.fa.fa-star.text-primary
+                            label(for='stars-rating-1')
+                              i.fa.fa-star.text-primary
       // end product
     //- .col-xs-12.col-md-6.bootstrap.snippets.bootdeys
     //-   // product

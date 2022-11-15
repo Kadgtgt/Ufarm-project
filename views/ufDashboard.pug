@@ -9,7 +9,8 @@ head
   link(rel='stylesheet' href='/css/style.css')
 header.header
   // place navbar here
-  a(href='') UF DashBoard 
+  h1 UF DashBoard 
+  span.text-danger #{currentUser.fName}
   form(method="POST" action="/logout")
     button.btn.btn-primary(type='submit') Logout
 main

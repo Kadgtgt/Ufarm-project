@@ -123,6 +123,36 @@ router.post("/produce/available", async (req, res) => {
 	}
 });
 
+// Ordering list
+router.get("/produce/order/:id", async (req, res) => {
+	try {
+		const saleProduct = await UFProdUploads.findOne({ _id: req.params.id });
+		res.render("order", { item: saleProduct });
+		// console.log("order list", saleProduct);
+	} catch (error) {
+		res.status(400).send("unable to show produce Availability");
+	}
+});
+
+router.post("/produce/order", async (req, res) => {
+	try {
+		await UFProdUploads.findOneAndUpdate({ _id: req.query.id }, req.body);
+		res.redirect("/homepage");
+	} catch (error) {
+		res.status(400).send("Order not successful");
+	}
+});
+
+// Return order list
+router.get("/orderlist", async (req, res) => {
+	try {
+		let ordered = await UFProdUploads.find({ role: "UrbanFarmer" });
+		res.render("orderlist", { orders: ordered });
+	} catch (error) {
+		res.status(400).send("No booked product");
+	}
+});
+
 router.post("/produce/delete", async (req, res) => {
 	try {
 		await UFProdUploads.deleteOne({ _id: req.body.id });
@@ -131,6 +161,5 @@ router.post("/produce/delete", async (req, res) => {
 		res.send(400).send("Sorry we were unable to delete product");
 	}
 });
-
 
 module.exports = router;
