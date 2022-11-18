@@ -13,7 +13,7 @@ router.post("/for", async (req, res) => {
 	console.log(req.body);
 	await Registration.register(register, req.body.password, (err) => {
 		if (err) {
-			res.status(400).render("forRegistration");
+			res.status(400).render("foRegistration");
 			console.log(err);
 		} else {
 			res.redirect("/folist");

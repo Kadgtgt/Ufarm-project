@@ -17,7 +17,7 @@ const connectEnsureLogin = require("connect-ensure-login");
 // 	res.render("ufDashboard");
 // });
 
-router.get("/aoDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
+router.get("/aoDashboard", connectEnsureLogin.ensureLoggedIn(), async(req, res) => {
 	req.session.user = req.user;
 	if (req.user.role == "AgricOfficer") {
 		res.render("aoDashboard", {currentUser:req.session.user});
@@ -27,7 +27,7 @@ router.get("/aoDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
 });
 
 // UF dashboard ROUTE
-router.get("/ufDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
+router.get("/ufDashboard", connectEnsureLogin.ensureLoggedIn(), async(req, res) => {
 	req.session.user = req.user;
 	if (req.user.role == "UrbanFarmer") {
 		res.render("ufDashboard", {currentUser:req.session.user});
@@ -36,8 +36,8 @@ router.get("/ufDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
 	}
 });
 
-router.get("/foDashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
-	req.session.user = req.body;
+router.get("/foDashboard", connectEnsureLogin.ensureLoggedIn(), async(req, res) => {
+	req.session.user = req.user;
 	if (req.user.role == "FarmerOne") {
 		res.render("foDashboard", {currentUser:req.session.user});
 	} else {

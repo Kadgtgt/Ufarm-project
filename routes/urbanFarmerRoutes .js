@@ -22,9 +22,10 @@ var upload = multer({ storage: storage });
 const UFProdUploads = require("../model/UrbanFarmerUpload");
 
 router.get("/producelist", async (req, res) => {
+	req.session.user = req.user;
 	const urbanFarmerList = await UFProdUploads.find({ role: "UrbanFarmer" });
 	console.log(urbanFarmerList);
-	res.render("producelist", { products: urbanFarmerList });
+	res.render("producelist", { products: urbanFarmerList, currentUser:req.session.user});
 });
 
 router.get("/producepage", async (req, res) => {

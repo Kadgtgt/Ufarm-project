@@ -15,6 +15,7 @@ const expressSession = require("express-session")({
 
 // importing user model
 const Registration = require("./model/User");
+// const CustomerMsg = require("./model/User");
 
 // importing route files
 const aOregRoutes = require("./routes/aOregRoutes");
@@ -25,6 +26,7 @@ const authRoutes = require("./routes/authRoutes");
 const dashboardsRoutes = require("./routes/dashboardsRoutes");
 const urbanFarmerRoutes = require("./routes/urbanFarmerRoutes ");
 const reportsRoutes = require("./routes/reportsRoutes");
+const customerMsgRoutes = require("./routes/customerMsgRoutes");
 
 // INSTANTIATIONS
 const app = express();
@@ -71,6 +73,7 @@ app.use("/", authRoutes);
 app.use("/", dashboardsRoutes);
 app.use("/", urbanFarmerRoutes);
 app.use("/", reportsRoutes);
+app.use("/", customerMsgRoutes);
 
 //Always the second last line in the Express server
 app.get("*", (req, res) => {
