@@ -4,7 +4,7 @@ head
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet' href='bootstrap-css/css/bootstrap.css')
-    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='/css/appoint.css')
     title Registration
 nav.navbar.navbar-expand-lg.bg-light.pb-4
     
@@ -14,18 +14,12 @@ nav.navbar.navbar-expand-lg.bg-light.pb-4
         hr
         .row
             .col
-                .form-field
-                    label(for='') Farmer One Names:
-                    select(name='fName')
-                        if farmerones.length
-                            each farmerone in farmerones
-                                option(value='')
-                                option(value='farmerone._id')  #{farmerone.fName+' '+farmerone.lName}
-            .col
-                .form-field
-                    label(for='')
-                        | Ward:
-                    input#ward(type='text' name='ward')     
-            .form-field
-                input.btn.appoint-btn(type='submit' value='Appoint')
+                .div
+                    .form2
+                        .form-field
+                            label(for='')
+                                | Ward:
+                            input#ward(type='text' name='ward')     
+                    .form-field
+                        input.btn.appoint-btn(type='submit' value='Appoint')
 script(src='bootstrap-js/js/bootstrap.bundle.js')

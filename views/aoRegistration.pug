@@ -15,7 +15,7 @@ main
     hr
     .row.justify-content-center.align-items-center.my-5.cage
       .col-lg-2.cage
-        form(action='/aor' name='register'  method="POST")
+        form(action='/aor' name='register'  method="POST" onsubmit="return Validate2();")
           .row.justify-content-center.align-items-center.g-2.lamar
             .col-lg-3.form-zones
               label First Name:
@@ -45,12 +45,13 @@ main
 
             .col-lg-3.form-zones
               label Division:
-              select#select.form-select(name='division')
+              select#division.form-select(name='division')
                 option(value='' style='text-align:center;') Select option
                 option(value='Makindye') Makindye
                 option(value='Rubaga') Rubaga
                 option(value='Nakawa') Nakawa
                 option(value='Kawempe') Kawempe
+              small#divisionerr
 
             .col-lg-3.form-zones 
               label Date of Birth: 
@@ -68,7 +69,7 @@ main
               select.input(name='role')
                 option(value='0')
                 option(value='AgricOfficer') AgricOfficer
-                small#roleerr
+              small#roleerr
             
             .col-lg-3.form-zones
               label Gender:
@@ -77,7 +78,7 @@ main
                 span Male
                 input#gender2(type='radio' name='gender' autocomplete='off' value='female')
                 span Female
-                small#gendererr
+              small#gendererr
 
             .col-lg-3.form-z0nes 
               label Password: 
@@ -89,3 +90,4 @@ main
               button.btn.btn-primary(type='submit') Register
 footer
   // place footer here
+script(src="/js/AOvalidation.js")

@@ -9,10 +9,19 @@ head
   link(rel='stylesheet' href='/css/style.css')
 header.header
   // place navbar here
-  h1 UF DashBoard 
-  span.text-danger #{currentUser.fName}
-  form(method="POST" action="/logout")
-    button.btn.btn-primary(type='submit') Logout
+  .row
+    .col
+      nav.navbar.navbar-light.bg-light.fixed-top
+        .container-fluid
+          //- img.image(src='./Images/fav.jpg')
+          h1.title UF Dashboard
+          span.text-black #{currentUser.fName}
+          form(method="POST" action="/logout")
+            button.btn2(type='submit') Logout
+  //- h1 UF DashBoard 
+  //- span.text-danger #{currentUser.fName}
+  //- form(method="POST" action="/logout")
+  //-   button.btn.btn-primary(type='submit') Logout
 main
   .container-fluid
     .row.row-cols-2.row-cols-md-8

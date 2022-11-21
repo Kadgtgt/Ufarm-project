@@ -1,18 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
 }
 
-body {
-	background-color: purple;
+h1 {
+	margin-left: 30px;
 }
 
-.header {
+body {
+	background-color: #fff;
+}
+
+.title {
+	font-family: "Fredoka One", cursive;
+	transform: translateX(-20px);
+	font-size: 30px;
+}
+
+span {
+	font-family: "Fredoka One", cursive;
+}
+
+.my-list ul li {
+	display: inline-block;
+	margin-left: 50px;
+	list-style: none;
+	margin-top: 12px;
+	font-family: "Fredoka One", cursive;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+/* .header {
 	background-color: skyblue;
 	line-height: 70px;
 	padding-left: 30px;
 	font-weight: bolder;
-}
+	margin-top: 5px;
+} */
 
 a {
 	text-decoration: none;
@@ -31,7 +58,7 @@ a:hover {
 
 .card {
 	background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7)), url(../Images/farmer.jpg);
-	margin-top: 20px;
+	margin-top: 100px;
 	margin-left: 30%;
 	width: 50%;
 	height: 200px;
@@ -42,6 +69,23 @@ a:hover {
 	transition: 0.2s ease-in-out;
 	position: relative;
 	overflow: hidden;
+	margin-left: 1400px;
+}
+
+.btn2 {
+	border: 1px solid black;
+	transition: 0.2s ease-in-out;
+	position: relative;
+	overflow: hidden;
+	font-family: "Fredoka One", cursive;
+	padding: 4px 6px;
+	border-radius: 4px;
+}
+
+.btn2:hover {
+	border: 1px solid #fff;
+	box-shadow: #222 1px 0 5px;
+	transform: translateY(-5px);
 }
 
 .btn:hover {

@@ -25,7 +25,7 @@ router.get("/producelist", async (req, res) => {
 	req.session.user = req.user;
 	const urbanFarmerList = await UFProdUploads.find({ role: "UrbanFarmer" });
 	console.log(urbanFarmerList);
-	res.render("producelist", { products: urbanFarmerList, currentUser:req.session.user});
+	res.render("producelist", { products: urbanFarmerList, currentUser: req.session.user });
 });
 
 router.get("/producepage", async (req, res) => {
@@ -161,6 +161,24 @@ router.post("/produce/delete", async (req, res) => {
 	} catch (error) {
 		res.send(400).send("Sorry we were unable to delete product");
 	}
+});
+
+router.get("/hortpage", async (req, res) => {
+	const hortList = await UFProdUploads.find({ role: "UrbanFarmer" });
+	console.log(hortList);
+	res.render("horticulture", { hortProducts: hortList });
+});
+
+router.get("/poultrypage", async (req, res) => {
+	const poultryList = await UFProdUploads.find({ role: "UrbanFarmer" });
+	console.log(poultryList);
+	res.render("poultry", { poultryProducts: poultryList });
+});
+
+router.get("/dairypage", async (req, res) => {
+	const dairyList = await UFProdUploads.find({ role: "UrbanFarmer" });
+	console.log(dairyList);
+	res.render("dairy", { dairyProducts: dairyList });
 });
 
 module.exports = router;

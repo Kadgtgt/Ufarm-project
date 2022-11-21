@@ -9,11 +9,16 @@ head
   //- link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous')
   link(rel='stylesheet' href='/css/style.css')
 header.header
-  // place navbar here
-  a(href='') AO DashBoard 
-  span.text-white #{currentUser.fName}
-  form(method="POST" action="/logout")
-    button.btn.btn-primary(type='submit') Logout
+  // place navbar 
+  .row
+    .col
+      nav.navbar.navbar-light.bg-light.fixed-top
+        .container-fluid
+          //- img.image(src='./Images/fav.jpg')
+          h1.title AO Dashboard
+          span.text-black #{currentUser.fName}
+          form(method="POST" action="/logout")
+            button.btn2(type='submit') Logout 
 main
   .container-fluid
     .row.row-cols-2.row-cols-md-8

@@ -4,33 +4,35 @@ head
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet' href='bootstrap-css/css/bootstrap.css')
-    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='/css/order.css')
     title Registration
 .container-fluid.form-style
     form#signup.form(action='/produce/order?id='+item._id name='registration' method='POST')
-        h3 Update Produce 
+        h3 Order For Produce 
         hr
         .row
             .col
-                .form-field
-                    label(for='availability') Produce Availability:
-                    select(name='availability')
-                        option(value="booked" selected = item.availability === 'booked') Booked
-                .form-field
-                    label(for='')
-                        | Customer Email:
-                        small  *
-                    input#ward(type='text' name='customeremail' autocomplete='off')
-                .form-field
-                    label(for='')
-                        | Customer Phone Number:
-                        small  *
-                    input#ward(type='text' name='customertel' autocomplete='off')
-                .form-field
-                    label(for='')
-                        | Customer Direction:
-                        small  *
-                    input#ward(type='text' name='customerdirection' autocomplete='off')
-            .form-field
-                input.btn.register-btn(type='submit' value='Register')
+                .div
+                    .form1
+                        .form-field
+                            label(for='availability') Produce Availability:
+                            select(name='availability')
+                                option(value="booked" selected = item.availability === 'booked') Booked
+                        .form-field
+                            label(for='')
+                                | Customer PhoneNo:
+                                small  
+                            input#ward(type='text' name='customertel' autocomplete='off')        
+                        .form-field
+                            label(for='')
+                                | Customer EmailAdd:
+                                small  
+                            input#ward(type='text' name='customeremail' autocomplete='off')
+                        .form-field
+                            label(for='')
+                                | Customer Direction:
+                                small  
+                            input#ward(type='text' name='customerdirection' autocomplete='off')
+                    .form-field
+                        input.btn.register-btn(type='submit' value='Order')
 script(src='bootstrap-js/js/bootstrap.bundle.js')

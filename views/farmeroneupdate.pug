@@ -4,7 +4,7 @@ head
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet' href='bootstrap-css/css/bootstrap.css')
-    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='/css/appoint.css')
     title Registration
 nav.navbar.navbar-expand-lg.bg-light.pb-4
     
@@ -14,33 +14,14 @@ nav.navbar.navbar-expand-lg.bg-light.pb-4
         hr
         .row
             .col
+                .form1
+                    .form-field
+                        label(for='') Phone number:
+                    input(name='tel' type='text') 
+                
+                    .form-field
+                        label(for='') Activities:
+                    input(name='activities' type='text')      
                 .form-field
-                    label(for='') Farmer One Names:
-                    select(name='fName')
-                        if farmerones.length
-                            each farmerone in farmerones
-                                option(value='')
-                                option(value='farmerone._id')  #{farmerone.fName+' '+farmerone.lName}
-                //- .form-field
-                //-         label(for='') Urban Farmer Last Name:
-                //-         select(name='fName')
-                //-             if urbanfarmers.length
-                //-                 each urbanfarmer in urbanfarmers
-                //-                     option(value='')
-                //-                     option(value='urbanfarmer._id') #({urbanfarmer.lName'})
-            .col
-                .form-field
-                    label(for='')
-                        | UniqueNo:
-                    input#ward(type='text' name='uniqueNo')
-            .col
-                .form-field
-                    label(for='') Phone number:
-                input(name='tel' type='text') 
-            .col
-                .form-field
-                    label(for='') Residence Type:
-                input(name='residence' type='text')      
-            .form-field
-                input.btn.register-btn(type='submit' value='Register')
+                    input.btn.register-btn(type='submit' value='Register')
 script(src='bootstrap-js/js/bootstrap.bundle.js')

@@ -1,0 +1,73 @@
+doctype html
+head
+  title Products page
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS v5.2.0-beta1
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous')
+  link(rel='icon' href='/Images/fav.jpg')
+  link(rel='stylesheet' href='/css/productpage.css')
+  link(href='https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap' rel='stylesheet')
+header
+  // place navbar here
+  nav.navbar.navbar-light.bg-light.fixed-top
+    .container-fluid
+      img.image(src='/Images/fav.jpg')
+      h1.title Masajja Urban Farm
+      .my-list
+        ul
+          li
+            a.btn(href='/homepage') Home
+          li
+            a.btn(href='/aboutpage') About Us
+          li
+            a.btn(href='/contactpage') Contacts
+main
+  link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet')
+  .container-fluid
+    .col-md-12.bootstrap.snippets.bootdeys
+      // product
+      .product-content.product-wrap.clearfix
+        .row
+          .col.my-5(style='display:flex; flex-wrap:wrap;' )
+            if poultryProducts.length
+              each poultryProduct in poultryProducts
+                if poultryProduct.availability = "available" && poultryProduct.status == "approved"  && poultryProduct.prodCategory == "Poultry"
+                  .col-md-5.col-sm-12.col-xs-12
+                    .product-image
+                      img(src="/"+poultryProduct.prodImage, alt="Image" width='150px' height="150px")
+                      span.tag2.hot
+                        | HOT
+                  .col-md-7.col-sm-12.col-xs-12
+                    .product-deatil
+                      h5.name
+                        a(href='#')
+                          | #{poultryProduct.prodName}
+                          //- span Organic
+                      p.price-container
+                        span UGX#{poultryProduct.price}
+                      span.tag1
+                    .description
+                      p Proin in ullamcorper lorem. Maecenas eu ipsum 
+                    .product-info.smart-form
+                      .row
+                        .col-md-6.col-sm-6.col-xs-6
+                          a.btn.btn-success(href='/produce/order/' +poultryProduct._id) Order
+                          br
+                          // <a href="" class="btn btn-success">Order</a>
+                        .col-md-6.col-sm-6.col-xs-6
+                          .rating
+                            label(for='stars-rating-5')
+                              i.fa.fa-star
+                            label(for='stars-rating-4')
+                              i.fa.fa-star
+                            label(for='stars-rating-3')
+                              i.fa.fa-star.text-primary
+                            label(for='stars-rating-2')
+                              i.fa.fa-star.text-primary
+                            label(for='stars-rating-1')
+                              i.fa.fa-star.text-primary
+footer
+  // place footer here
+// Bootstrap JavaScript Libraries

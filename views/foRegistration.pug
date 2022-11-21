@@ -15,7 +15,7 @@ main
     hr
     .row.justify-content-center.align-items-center.my-5.cage
       .col-lg-2.cage
-        form(action='/for' name='register'  method="POST" onsubmit="return Validate;")
+        form(action='/for'  method="POST" name="register" onsubmit="return Validate();")
           .row.justify-content-center.align-items-center.g-2.lamar
             .col-lg-3.form-zones
               label First Name:
@@ -34,11 +34,12 @@ main
 
             .col-lg-3.form-zones
               label Activities:
-              select#select.form-select(name='activity')
+              select#activity.form-select(name='activity')
                 option(value='' style='text-align:center;') Select option
                 option(value='Horticulture') Horticulture
                 option(value='Poultry') Poultry
                 option(value='Diary') Diary
+              small#activityerr
 
             .col-lg-3.form-zones
               label Unique Number:
@@ -52,12 +53,13 @@ main
 
             .col-lg-3.form-zones
               label Ward:
-              select#select.form-select(name='ward')
+              select#ward.form-select(name='ward')
                 option(value='' style='text-align:center;') Select option
                 option(value='W01') W01
                 option(value='W02') W02
                 option(value='W03') W03
                 option(value='W04') W04
+              small#warderr
 
             .col-lg-3.form-zones
               label Residence Type:
@@ -76,25 +78,24 @@ main
 
             .col-lg-3.form-zones
               label Role: 
-              //- input.form-inputs(name='role')
-              select.input(name='role')
+              select#role.input(name='role')
                 option(value='0')
                 option(value='FarmerOne') FarmerOne
-                small#roleerr
+              small#roleerr
             
             .col-lg-3.form-zones
-              label Period of Stay:
+              label Period of Stay(Years):
               input#pos.form-inputs(name='pos' type='text' style='padding:0;')
               small#poserr  
             
             .col-lg-3.form-zones
               label Gender:
-              .radio
-                input#gender1(type='radio' name='gender' autocomplete='off' value='male' checked='')
-                span Male
-                input#gender2(type='radio' name='gender' autocomplete='off' value='female')
-                span Female
-                small#gendererr
+                .radio
+                  input#gender1(type='radio' name='gender' autocomplete='off' value='male' checked='')
+                  span Male
+                  input#gender2(type='radio' name='gender' autocomplete='off' value='female')
+                  span Female
+              small#gendererr
 
             .col-lg-3.form-zones
               label Direction:
@@ -109,5 +110,4 @@ main
             .col-lg-6
               button.btn.btn-primary(type='submit') Register
 footer
-  // place footer here
-script(src="/js/validation.js")
+script(src="/js/FOvalidation.js")

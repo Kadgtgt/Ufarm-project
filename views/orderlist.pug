@@ -38,14 +38,19 @@ block content
             font-weight:bolder;
             font-weight:700;
             color: taupe;
+            text-decoration: none;
         }
-        .btnz{
-            border: 3px solid red;
+        .btn2{
+            padding-top:8px;
+            padding-bottom:8px;
+            border: 3px solid blue;
             border-radius: 5px;
-            margin-left: 150px;
+            margin-left: 110px;
             font-weight:bolder;
-            font-weight:700;
             color:black; 
+            text-decoration: none;
+            padding-left:8px;
+            padding-right:8px;
         }
         .delete{
             font-size:18px;
@@ -60,49 +65,49 @@ block content
         
     header.card-header.list
         h4.card-title Ordered Products List 
-    table.table.table-bordered 
+    table.table.table-bordered(style="border:3px ridge grey") 
         thead
-            tr
-                th Produce Name
-                th Quantity
-                th Delivery Mode 
-                th Price
-                th Status
-                th Customer Email
-                th Customer Phone Number
-                th Customer Directions
-                th Availability
-                th Mode of Payment
-                th Image 
-                th Change Availability 
-                th Delete
+            tr(style="border:3px ridge grey")
+                th(style="border:3px ridge grey") Produce Name
+                th(style="border:3px ridge grey") Quantity
+                th(style="border:3px ridge grey") Delivery Mode 
+                th(style="border:3px ridge grey") Price
+                th(style="border:3px ridge grey") Status
+                th(style="border:3px ridge grey") Customer Email
+                th(style="border:3px ridge grey") Customer Phone Number
+                th(style="border:3px ridge grey") Customer Directions
+                th(style="border:3px ridge grey") Availability
+                th(style="border:3px ridge grey") Mode of Payment
+                th(style="border:3px ridge grey") Image 
+                th(style="border:3px ridge grey") Change Availability 
+                th(style="border:3px ridge grey") Delete
         tbody
             if orders.length
                 each order in orders
                     if order.availability == 'booked'
                         tr
-                            td #{order.prodName}
-                            td #{order.prodQuantity}
-                            td #{order.deliveryMode}
-                            td #{order.price}
-                            td #{order.status}
-                            td #{order.customeremail}
-                            td #{order.customertel}
-                            td #{order.customerdirection}
-                            td #{order.availability}
-                            td #{order.paymentMode}
-                            td 
+                            td(style="border:3px ridge grey") #{order.prodName}
+                            td(style="border:3px ridge grey") #{order.prodQuantity}
+                            td(style="border:3px ridge grey") #{order.deliveryMode}
+                            td(style="border:3px ridge grey") #{order.price}
+                            td(style="border:3px ridge grey") #{order.status}
+                            td(style="border:3px ridge grey") #{order.customeremail}
+                            td(style="border:3px ridge grey") #{order.customertel}
+                            td(style="border:3px ridge grey") #{order.customerdirection}
+                            td(style="border:3px ridge grey") #{order.availability}
+                            td(style="border:3px ridge grey") #{order.paymentMode}
+                            td(style="border:3px ridge grey") 
                                 img(src="/"+order.prodImage, alt="Image" width='150px' height="150px")
                             //- td #{moment(us
-                            td                            
+                            td(style="border:3px ridge grey")                            
                                 a.btn.btn-primary.btn-block.availability(href='/produce/available/'+order._id) Availability
 
 
-                            td
+                            td(style="border:3px ridge grey")
                                 form(method="post" action='/produce/delete')
                                     input(type="hidden" placeholder="" name="id", value=order._id)
                                     button.btn.btn-danger.btn-block.delete(type="submit") Delete
     div.form-row
         div.col.form-group
-            a.btnz.btn-secondary(class="button" href="/foDashboard") Back
+            a.btn-primary.btn2(class="button" href="/foDashboard" style="text-decoration: none;") Back
 
