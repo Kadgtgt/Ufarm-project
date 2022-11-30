@@ -4,7 +4,7 @@ head
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet' href='bootstrap-css/css/bootstrap.css')
-    link(rel='stylesheet' href='css/style.css')
+    link(rel='stylesheet' href='/css/order.css')
     title Registration
 nav.navbar.navbar-expand-lg.bg-light.pb-4
     
@@ -12,17 +12,6 @@ nav.navbar.navbar-expand-lg.bg-light.pb-4
     form#signup.form(action='/produce/update?id='+product._id name='registration' method='POST')
         h3 Update Produce 
         hr
-        .row
-            .col
-                .form-field
-                    label(for='productname') Product Name:
-                    select(name='prodName')
-                        option(value="Eggs" selected = product.prodName === "Eggs") Eggs
-                        option(value="Broccoli" selected = product.prodName === 'Brocoli') Brocoli
-                        option(value="Onions" selected = product.prodName === 'Onions') Onions
-                        option(value="Cassava" selected = product.prodName === 'Cassava') Cassava
-                        option(value="Tomatoes" selected = product.prodName === 'Tomatoes') Tomatoes
-                        option(value="Butter" selected = product.prodName === 'Butter') Butter
         .row
             .col
                 .form-field

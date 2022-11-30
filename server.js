@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const config = require("./config/db");
 const passport = require("passport");
 const path = require("path");
-// const session = require("express-session")
 
 // defining expressSession
 const expressSession = require("express-session")({
@@ -50,7 +49,6 @@ app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
 // MIDDLEWARE
-// const bodyParser = require("body-parser");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/public/uploads", express.static(__dirname + "/public/uploads"));

@@ -26,15 +26,11 @@ const registrationSchema = new mongoose.Schema({
 		type: String,
 	},
 
-	password: {
-		type: String,
-	},
-
 	dor: {
 		type: String,
 	},
 
-	activities: {
+	activity: {
 		type: String,
 	},
 

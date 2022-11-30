@@ -11,9 +11,13 @@ const customerSchema = new mongoose.Schema({
 		type: String,
 	},
 
-	Tel: String,
+	Tel: {
+		type:String,
+	},
 
-	txtMsg: String,
+	txtMsg: {
+		type:String,
+	},
 });
 
 module.exports = mongoose.model("CustomerMsg", customerSchema);

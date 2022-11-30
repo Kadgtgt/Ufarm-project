@@ -2,14 +2,14 @@ const Validate4 = () => {
 	let val = 0;
 	var firstName = document.register.firstName;
 	var lastName = document.register.lastName;
-	var email = document.register.email;
-	var tel = document.register.tel;
+	var email = document.register.Email;
+	var tel = document.register.Tel;
 
 	// Errors
 	var firstNameError = document.getElementById("firstNameerr");
 	var lastNameError = document.getElementById("lastNameerr");
-	var emailError = document.getElementById("emailerr");
-	var telError = document.getElementById("telerr");
+	var emailError = document.getElementById("Emailerr");
+	var telError = document.getElementById("Telerr");
 
 	const alphabet = /^([A-Za-z]{2,25})$/;
 
@@ -19,7 +19,7 @@ const Validate4 = () => {
 		firstNameError.textContent = "Please enter your first name";
 		firstNameError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		val++;
+		val++
 	} else if (!firstName.value.match(alphabet)) {
 		firstName.style.border = "4px solid red";
 		firstNameError.textContent = "first name is alphabet and not more than 25 letters";
@@ -37,7 +37,7 @@ const Validate4 = () => {
 		lastNameError.textContent = "Please enter your last name";
 		lastNameError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		val++;
+		val++
 	} else if (!lastName.value.match(alphabet)) {
 		lastName.style.border = "4px solid red";
 		lastNameError.textContent = "last name is alphabet and not more than 25 letters";
@@ -56,7 +56,7 @@ const Validate4 = () => {
 		emailError.textContent = "Please enter your email";
 		emailError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		val++;
+		val++
 	} else if (!email.value.match(emailRegex)) {
 		email.style.border = "4px solid red";
 		emailError.textContent = "email should follow the right order.";
@@ -69,16 +69,17 @@ const Validate4 = () => {
 	}
 
 	// Telephone
-	const phonenumberRegex = /^\+\d{12}$/;
+	const phoneNumberRegex = /^\+\d{12}$/;
 	if (tel.value == "") {
 		tel.style.border = "4px solid red";
 		telError.textContent = "Please enter your phone number";
 		telError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		val++;
-	} else if (!tel.value.match(phonenumberRegex)) {
+		val++
+		return false;
+	} else if (!tel.value.match(phoneNumberRegex)) {
 		tel.style.border = "4px solid red";
-		telError.textContent = "Telnumber must follow 07***(+2567***) format";
+		telError.textContent = "Tel number must follow 07***(+2567***) format";
 		telError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
 		return false;

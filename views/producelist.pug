@@ -1,55 +1,50 @@
 extends layout
 block content
     header.card-header
-        h4.card-title List of Products
+        h4(style="margin-left:580px; font-size:60px;").card-title List of Products
     br
-    nav
-    #nav-tab.nav.nav-tabs(role='tablist')
-        a#nav-profile-tab.nav-item.nav-link(href='') Registered Products
-    #nav-tabContent.tab-content
     table.table.table-bordered 
         thead
-            tr
-                th Name
-                th Category 
-                th type
-                th Status
-                th Price 
-                th Quantity 
-                th Mode of Delivery 
-                th Mode of Payment 
-                th Availability
-                th Image
-                th Update
-                th Change Status
-                th Delete
+            tr(style="border:3px ridge grey")
+                th(style="border:3px ridge grey") Image
+                th(style="border:3px ridge grey") Name
+                th(style="border:3px ridge grey") Category 
+                th(style="border:3px ridge grey") type
+                th(style="border:3px ridge grey") Status
+                th(style="border:3px ridge grey") Price 
+                th(style="border:3px ridge grey") Quantity 
+                th(style="border:3px ridge grey") Mode of Delivery 
+                th(style="border:3px ridge grey") Mode of Payment 
+                th(style="border:3px ridge grey") Availability
+                th(style="border:3px ridge grey") Update
+                th(style="border:3px ridge grey") Change Status
+                th(style="border:3px ridge grey") Delete
         tbody
             if products.length
                 each product in products
                     if  product.status == "pending" && product.ward == currentUser.ward
-                        tr
-                            td #{product.prodName}
-                            td #{product.prodCategory}
-                            td #{product.prodType}
-                            td #{product.status}
-                            td #{product.price}
-                            td #{product.prodQuantity}
-                            td #{product.deliveryMode}
-                            td #{product.paymentMode}
-                            td #{product.availability}
-                            td 
+                        tr(style="border:3px ridge grey")
+                            td(style="border:3px ridge grey") 
                                 img(src="/"+product.prodImage, alt="Image" width='150px' height="150px")
-                            //- td #{moment(us
-                            td
+                            td(style="border:3px ridge grey") #{product.prodName}
+                            td(style="border:3px ridge grey") #{product.prodCategory}
+                            td(style="border:3px ridge grey") #{product.prodType}
+                            td(style="border:3px ridge grey") #{product.status}
+                            td(style="border:3px ridge grey") #{product.price}
+                            td(style="border:3px ridge grey") #{product.prodQuantity}
+                            td(style="border:3px ridge grey") #{product.deliveryMode}
+                            td(style="border:3px ridge grey") #{product.paymentMode}
+                            td(style="border:3px ridge grey") #{product.availability}
+                            td(style="border:3px ridge grey")
                                 a.btn.btn-primary.btn-block(href='/produce/update/'+product._id) Update
-                            td
-                               a.btn.btn-secondary.btn-block(href='/produce/approve/'+product._id) Approve
-                            td
+                            td(style="border:3px ridge grey")
+                               a.btn.btn-primary.btn-block(href='/produce/approve/'+product._id) Approve
+                            td(style="border:3px ridge grey")
                                 form(method="post" action='/produce/delete')
                                     input(type="hidden" placeholder="" name="id", value=product._id)
                                     button.btn.btn-danger.btn-block(type="submit") Delete
     div.form-row
         div.col.form-group
-            a(class='button' href='/foDashboard') Back
+            a(class='button' href='/foDashboard' style="text-decoration: none;border:2px solid blue; padding:8px 8px") Back
 
 block footer

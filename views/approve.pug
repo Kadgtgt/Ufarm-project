@@ -8,13 +8,13 @@ head
     title Registration
 .container-fluid.form-style
     form#signup.form(action='/produce/approve?id='+products._id name='registration' method='POST')
-        h3 Approve Produce 
+        h3(style="margin-left:580px; font-size:60px;") Approve Produce
         hr
         .row
             .col
                 .form-field
                     label(for='') Approve Product:
-                    select(name='status')
+                    select(style="border:3px ridge grey")(name='status')
                         option(value="pending" selected = products.status === "pending") pending
                         option(value="approved" selected = products.status === 'approved') approved
                 .form-field

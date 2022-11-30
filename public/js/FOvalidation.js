@@ -1,4 +1,4 @@
-const Validate = () => {
+const Validate = (event) => {
 	let val = 0;
 	var fName = document.register.fName;
 	var lName = document.register.lName;
@@ -44,7 +44,7 @@ const Validate = () => {
 		fNameError.textContent = "Please enter your first name";
 		fNameError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		val++;
+		val++
 	} else if (!fName.value.match(alphabet)) {
 		fName.style.border = "4px solid red";
 		fNameError.textContent = "first name is alphabet and not more than 25 letters";
@@ -62,7 +62,6 @@ const Validate = () => {
 		lNameError.textContent = "Please enter your last name";
 		lNameError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		// return false
 		val++
 	} else if (!lName.value.match(alphabet)) {
 		lName.style.border = "4px solid red";
@@ -81,7 +80,6 @@ const Validate = () => {
 		dorError.textContent = "Please enter your date of registration";
 		dorError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		// return false
 		val++
 	} else {
 		dor.style.border = "5px solid green";
@@ -94,7 +92,6 @@ const Validate = () => {
 		activityError.textContent = "Please select your activity";
 		activityError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		// return false
 		val++
 	} else {
 		activity.style.border = "5px solid green";
@@ -103,13 +100,11 @@ const Validate = () => {
 
 	//Unique Number**************************
 	const fORegex = /^FO-([0-9]{3})+$/;
-
 	if (uniqueNo.value == "") {
 		uniqueNo.style.border = "4px solid red";
 		uniqueNoError.textContent = "Enter your Unique number";
 		uniqueNoError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		// return false
 		val++
 	} else if (!uniqueNo.value.match(fORegex)) {
 		uniqueNo.style.border = "4px solid red";
@@ -131,7 +126,7 @@ const Validate = () => {
 		val++
 	} else if (!phoneNo.value.match(phonenumberRegex)) {
 		phoneNo.style.border = "4px solid red";
-		phoneNoError.textContent = "Unique number must follow 07***(+2567***) format";
+		phoneNoError.textContent = "Phone number must follow 07***(+2567***) format";
 		phoneNoError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
 		return false;
@@ -141,20 +136,12 @@ const Validate = () => {
 	}
 
 	//ward***************************
-
-	// let wardRegex = /^\W+([0-9]{0,4})+$/;
 	if (ward.value == "") {
 		ward.style.border = "4px solid red";
 		wardError.textContent = "Please select your ward";
 		wardError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:10px;";
 		val++
-	// } else if (!ward.value.match(wardRegex)) {
-	// 	ward.style.border = "4px solid red";
-	// 	wardError.textContent = "ward must be in W01,W02,W03,W04 format";
-	// 	wardError.style =
-	// 		"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:10px;";
-	// 	return false;
 	} else {
 		ward.style.border = "5px solid green";
 		wardError.textContent = "";
@@ -166,8 +153,7 @@ const Validate = () => {
 		residenceError.textContent = "Please enter your Residence type";
 		residenceError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		// return false
-		val++
+		val++;
 	} else {
 		residence.style.border = "5px solid green";
 		residenceError.textContent = "";
@@ -179,7 +165,6 @@ const Validate = () => {
 		dobError.textContent = "Please enter your date of birth";
 		dobError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		// return false
 		val++
 	} else {
 		dob.style.border = "5px solid green";
@@ -223,7 +208,6 @@ const Validate = () => {
 		posError.textContent = "Please enter your period of stay";
 		posError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		// return false
 		val++
 	} else if (!pos.value.match(alphanumeric)) {
 		pos.style.border = "4px solid red";
@@ -237,7 +221,7 @@ const Validate = () => {
 	}
 
 	// Gender
-	if (gender.value == "") {
+	if (!gender1.checked && !gender2.checked) {
 		gender.style.border = "4px solid red";
 		genderError.textContent = "Select your gender";
 		genderError.style =
@@ -255,6 +239,7 @@ const Validate = () => {
 		directionError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
 		val++
+		return false;
 	} else if (!direction.value.match(alphabet)) {
 		direction.style.border = "4px solid red";
 		directionError.textContent = "Your direction must follow the alphanumeric format";
@@ -273,20 +258,25 @@ const Validate = () => {
 		passwordError.style =
 			"color:red; font-size:10px; font-family:Arial, Helvetica, Sans-serif; margin-left:12px;";
 		val++
+		return false;
 	} else if (password.value.length > 16) {
 		password.style.border = "4px solid red";
 		passwordError.textContent = "Password must not exceed 16 characters";
 		passwordError.style =
 			"color:red; font-size:10px; font-family:Arial, Helvetica, Sans-serif; margin-left:12px;";
-		return false;
+		val++
 	} else if (password.value.length < 6) {
 		password.style.border = "4px solid red";
 		passwordError.textContent = "Password must have more than 6 characters";
 		passwordError.style =
 			"color:red; font-size:10px; font-family:Arial, Helvetica, Sans-serif; margin-left:12px;";
-		return false;
+		val++
 	} else {
 		password.style.border = "5px solid green";
 		passwordError.textContent = "";
 	}
+
+	if(val>0){
+		event.preventDefault()
+	};
 };

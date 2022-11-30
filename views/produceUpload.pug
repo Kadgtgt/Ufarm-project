@@ -15,81 +15,96 @@ main
     hr
     .row.justify-content-center.align-items-center.my-5.cage
       .col-lg-2.cage
-        form(action='/produceupload' method="POST" enctype="multipart/form-data")
+        form(action='/produceupload' name='uploads' method="POST" enctype="multipart/form-data" onsubmit="return validate5();")
           .row.justify-content-center.align-items-center.g-2.lamar
             .col-lg-3.form-zones
               label Supplier Name:
-              select#select.form-select(name='supplierName')
+              select#supplierName.form-select(name='supplierName')
                 if urbanfarmers.length
                   each urbanfarmer in urbanfarmers
                     option(value='')
                     option(value=urbanfarmer._id) #{urbanfarmer.fName+' '+urbanfarmer.lName}
+              small#supplierNameerr
             .col-lg-3.form-zones
               label Product name:
-              input.form-inputs(name='prodName' type='text')
+              input#prodName.form-inputs(name='prodName' type='text')
+              small#prodNameerr
             .col-lg-3.form-zones
               label Date of upload:
-              input.form-inputs(name='regDate' type='date')
+              input#regDate.form-inputs(name='regDate' type='date')
+              small#regDateerr
             .col-lg-3.form-zones
               label Supplier ID (@email):
-              input.form-inputs(name='supplierId' type='email')
+              input#supplierId.form-inputs(name='supplierId' type='email')
+              small#supplierIderr
             .col-lg-3.form-zones
               label Upload image:
-              input.form-inputs(name='prodImage' type='file' style='padding:0;')
+              input#prodImage.form-inputs(name='prodImage' type='file' style='padding:0;')
+              small#prodImageerr
             .col-lg-3.form-zones
               label Product Category:
-              select#select.form-select(name='prodCategory')
+              select#prodCategory.form-select(name='prodCategory')
                 option(value='' style='text-align:center;') Select option
                 option(value='Horticulture') Horticulture
                 option(value='Poultry') Poultry
                 option(value='Dairy') Dairy
+              small#prodCategoryerr
             .col-lg-3.form-zones
               label Unique No:
-              select#select.form-select(name='uniqueNo')
+              select#uniqueNo.form-select(name='uniqueNo')
                 if urbanfarmers.length
                     each urbanfarmer in urbanfarmers
                       option(value='')
                       option(value=urbanfarmer.uniqueNo type='text' style='text-align:center;') #{urbanfarmer.uniqueNo}
+              small#uniqueNoerr
             .col-lg-3.form-zones
               label Ward:
-              select#select.form-select(name='ward')
+              select#ward.form-select(name='ward')
                 if urbanfarmers.length
                     each urbanfarmer in urbanfarmers
                       option(value='')
                       option(value=urbanfarmer._ward style='text-align:center;') #{urbanfarmer.ward}
+              small#warderr
             .col-lg-12.form-radio
               label Product type:
               .radio
                 | Organic
-                input(type='radio' name='prodType' value="Organic")
+                input#prodType(type='radio' name='prodType' value="Organic")
                 |             Non-Organic
-                input(type='radio' name='prodType' value="Non-Organic")
+                input#prodType(type='radio' name='prodType' value="Non-Organic")
+              small#prodTypeerr
             .col-lg-3.form-zones
               label Quantity:
-              input.form-inputs(name='prodQuantity' type='number' style='padding:0;')
+              input#prodQuantity.form-inputs(name='prodQuantity' type='number' style='padding:0;')
+              small#prodQuantityerr
             .col-lg-3.form-zones
               label Mode of payment:
-              select#select.form-select(name='paymentMode')
+              select#paymentMode.form-select(name='paymentMode')
                 option(value='' style='text-align:center;') Select option
                 option(value='Mobile money') Mobile money
                 option(value='Pay with cash') Pay with cash
+              small#paymentModeerr
             .col-sm-12.col-lg-2.form-zones
               label Price:(Ugx)
-              input.form-inputs(type='number' name='price' placeholder='Ugx:')
+              input#price.form-inputs(type='number' name='price' placeholder='Ugx:')
               //- customer hidden details
               input.form-inputs(type='hidden' name='customeremail' placeholder='')
               input.form-inputs(type='hidden' name='customertel' placeholder='')
               input.form-inputs(type='hidden' name='customerdirection' placeholder='')
+              small#priceerr
             .col-lg-3.form-zones
               label Mode of Delivery:
-              select#select.form-select(name='deliveryMode')
+              select#deliveryMode.form-select(name='deliveryMode')
                 option(value='' style='text-align:center;') Select option
                 option(value='Pick up') Pick up
                 option(value='Home delivery') Home delivery
+              small#deliveryModeerr
             .col-lg-3.form-zones
               label Direction:
               textarea#direction.form-inputs(name='direction' cols='30' rows='10')
+              small#directionerr
             .col-lg-6
               button.btn.btn-primary(type='submit') UPLOAD
 footer
-  // place footer here
+  // place footer 
+script(src="/js/prodUploadsValidation.js")

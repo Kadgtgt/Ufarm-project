@@ -16,8 +16,6 @@ var storage = multer.diskStorage({
 	},
 });
 
-// instantiate variable upload to store multer functionality to upload image
-var upload = multer({ storage: storage });
 
 const UFProdUploads = require("../model/UrbanFarmerUpload");
 
@@ -33,6 +31,9 @@ router.get("/producepage", async (req, res) => {
 	console.log(productsList);
 	res.render("productspage", { productsAvailable: productsList });
 });
+
+// instantiate variable upload to store multer functionality to upload image
+var upload = multer({ storage: storage });
 
 router.get("/produceupload", async (req, res) => {
 	let urbanFarmerList = await Registration.find({ role: "UrbanFarmer" });
