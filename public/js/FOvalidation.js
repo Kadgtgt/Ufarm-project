@@ -1,4 +1,4 @@
-const Validate = (event) => {
+const Validate1 = (event) => {
 	let val = 0;
 	var fName = document.register.fName;
 	var lName = document.register.lName;
@@ -153,7 +153,7 @@ const Validate = (event) => {
 		residenceError.textContent = "Please enter your Residence type";
 		residenceError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		val++;
+		val++
 	} else {
 		residence.style.border = "5px solid green";
 		residenceError.textContent = "";
@@ -165,7 +165,7 @@ const Validate = (event) => {
 		dobError.textContent = "Please enter your date of birth";
 		dobError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
-		val++
+		val++;
 	} else {
 		dob.style.border = "5px solid green";
 		dobError.textContent = "";
@@ -239,13 +239,12 @@ const Validate = (event) => {
 		directionError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:15px;";
 		val++
-		return false;
 	} else if (!direction.value.match(alphabet)) {
 		direction.style.border = "4px solid red";
 		directionError.textContent = "Your direction must follow the alphanumeric format";
 		directionError.style =
 			"color:red; font-size:12px; font-family:Arial, Helvetica, Sans-serif; margin-left:12px;";
-		return false;
+		return false
 	} else {
 		direction.style.border = "5px solid green";
 		directionError.textContent = "";
@@ -258,7 +257,6 @@ const Validate = (event) => {
 		passwordError.style =
 			"color:red; font-size:10px; font-family:Arial, Helvetica, Sans-serif; margin-left:12px;";
 		val++
-		return false;
 	} else if (password.value.length > 16) {
 		password.style.border = "4px solid red";
 		passwordError.textContent = "Password must not exceed 16 characters";
@@ -276,7 +274,7 @@ const Validate = (event) => {
 		passwordError.textContent = "";
 	}
 
-	if(val>0){
-		event.preventDefault()
-	};
+	if (val > 0) {
+		event.preventDefault();
+	}
 };

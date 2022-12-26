@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // Importing Model
-const CustomerMsg = require("../model/customer");
+const CustomerMsg = require("../model/Customer");
 
 router.post("/message", async (req, res) => {
 	console.log(req.body);
